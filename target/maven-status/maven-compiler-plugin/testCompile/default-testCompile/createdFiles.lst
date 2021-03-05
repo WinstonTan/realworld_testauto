@@ -1,10 +1,9 @@
 driverFactory/DriverFactory.class
-pageObjects/SignIn.class
-util/UniqueKeyGenerator.class
-stepDef/StepDef.class
-stepDef/LoginStepDef.class
 pageObjects/NewPost.class
 pageObjects/SignUp.class
 pageObjects/Home.class
+pageObjects/SignIn.class
 testRunner/SignUpTestRunner.class
+util/UniqueKeyGenerator.class
+stepDef/StepDef.class
 util/ElementHelper.class

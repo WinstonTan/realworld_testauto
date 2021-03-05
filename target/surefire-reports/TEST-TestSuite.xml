@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="21.894" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="52.805" tests="13" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="cucumber.options" value="--tags @signup and @validation"/>
     <property name="java.vm.version" value="15.0.1+9-18"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/tanchw/Documents/assignment"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/tanchw/Documents/assignment/realworldweb-testauto"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,7 +14,7 @@
     <property name="user.country" value="SG"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/tanchw/Documents/assignment"/>
+    <property name="user.dir" value="/Users/tanchw/Documents/assignment/realworldweb-testauto"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="15.0.1+9-18"/>
     <property name="os.arch" value="x86_64"/>
@@ -36,12 +37,11 @@
     <property name="user.timezone" value="Asia/Singapore"/>
     <property name="file.encoding" value="US-ASCII"/>
     <property name="java.specification.version" value="15"/>
-    <property name="cucumber.filter.tags" value="@signin"/>
     <property name="user.name" value="tanchw"/>
     <property name="java.class.path" value="/Library/apache-maven-3.6.3/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -DsuiteXmlFile=TestNG.xml -Dcucumber.filter.tags=@signin"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -DsuiteXmlFile=TestNG.xml -Dcucumber.options=--tags @signup and @validation"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -55,9 +55,50 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="5.169"/>
-  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.756"/>
-  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.712"/>
-  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.874"/>
-  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="4.44"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="4.875"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.878"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.588"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.571"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.57"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.866"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="4.347"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.821"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.695">
+    <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+</failure>
+    <system-out><![CDATA[
+@signup
+Scenario Outline: Validation test on Sign Up page                                           &amp#27;[90m# src/test/resources/features/SignUp.feature:27&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on homepage&amp#27;[0m                                                                 &amp#27;[90m# stepDef.StepDef.user_is_on_homepage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on Sign up hypertext&amp#27;[0m                                                           &amp#27;[90m# stepDef.StepDef.clicks_on_sign_up_hypertext()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mSign Up page is loaded successfully&amp#27;[0m                                                  &amp#27;[90m# stepDef.StepDef.sign_up_page_is_loaded_successfully()&amp#27;[0m
+ username: [blank]  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters &amp#27;[0m&amp#27;[32m&amp#27;[1m[blank]&amp#27;[0m&amp#27;[32m, &amp#27;[0m&amp#27;[32m&amp#27;[1mauto_testuser_99900@mailinator.com&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1mAbcd1234&amp#27;[0m&amp#27;[32m in Sign Up page&amp#27;[0m &amp#27;[90m# stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Sign in button&amp#27;[0m                                                               &amp#27;[90m# stepDef.StepDef.click_on_sign_in_button()&amp#27;[0m
+  &amp#27;[31mThen &amp#27;[0m&amp#27;[31msign up error message prompted "&amp#27;[0m&amp#27;[31m&amp#27;[1musername can't be blank (minimum is 1 character)&amp#27;[0m&amp#27;[31m"&amp#27;[0m    &amp#27;[90m# stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)&amp#27;[0m
+      &amp#27;[31mjava.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at stepDef.StepDef.sign_up_error_message_prompted(StepDef.java:95)
+	at ���.sign up error message prompted "username can't be blank (minimum is 1 character)"(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/SignUp.feature:21)
+&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 29902
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1614969416.477][WARNING]: FromSockAddr failed on netmask
+ChromeDriver was started successfully.
+Mar 06, 2021 2:36:57 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Mar 06, 2021 2:36:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 89
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="3.957"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="4.552"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="4.007"/>
+  <testcase name="runScenario" classname="testRunner.SignUpTestRunner" time="4.243"/>
 </testsuite>

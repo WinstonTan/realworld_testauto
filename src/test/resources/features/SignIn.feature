@@ -6,7 +6,7 @@ Feature: Test Sign in on realworld website
     Given user is on homepage
     And clicks on Sign in hypertext
     Then Sign in page is loaded successfully
-    When user enters <email> and <password>
+    When user enters <email> and <password> in Sign In page
     And click on Sign in button
     Then user will be redirected back to home page
 
@@ -19,7 +19,7 @@ Feature: Test Sign in on realworld website
     Given user is on homepage
     And  clicks on Sign in hypertext
     Then Sign in page is loaded successfully
-    When user enters <email> and <password>
+    When user enters <email> and <password> in Sign In page
     And click on Sign in button
     Then sign in error message prompted "<errorMsg>"
 

@@ -6,21 +6,22 @@ Feature: Test Sign-Up in realworld website
     Given user is on homepage
     And  clicks on Sign up hypertext
     Then Sign Up page is loaded successfully
-    When user enters unique username and email, and a valid password
+    When user inserts unique username and email, and a valid password
     And click on Sign in button
     Then successfully signed up username hypertext will be displayed
     Then user will be redirected back to home page
+
 
   Scenario Outline: Validation test on Sign Up page
     Given user is on homepage
     And  clicks on Sign up hypertext
     Then Sign Up page is loaded successfully
-    When user enters <username> , <email> and <password>
+    When user enters <username>, <email> and <password> in Sign Up page
     And click on Sign in button
-    Then error message prompted "<errorMsg>"
+    Then sign up error message prompted "<errorMsg>"
 
     Examples:
-      | username              |  email                              | password  |  errorMsg                                                     |
+      | username              |  email                              | password                                                                  |  errorMsg                                       |
       | auto_testuser_99000   | auto_testuser_00000@mailinator.com  | Abcd1234                                                                  | email has already been taken                    | # Email already been taken
       | auto_testuser_00000   | auto_testuser_99900@mailinator.com  | Abcd1234                                                                  | username has already been taken                 | # Duplicated username
       | [blank]               | auto_testuser_99900@mailinator.com  | Abcd1234                                                                  | username can't be blank (minimum is 1 character)| # Empty username

@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-03-05T17:15:45.720Z",
+        "start_timestamp": "2021-03-05T18:36:25.023Z",
         "line": 15,
         "name": "Test signing in with valid email and password",
         "description": "",
@@ -11,7 +11,7 @@
         "after": [
           {
             "result": {
-              "duration": 97243000,
+              "duration": 90171000,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3368650000,
+              "duration": 3080005000,
               "status": "passed"
             },
             "line": 6,
@@ -36,7 +36,7 @@
           },
           {
             "result": {
-              "duration": 108927000,
+              "duration": 104016000,
               "status": "passed"
             },
             "line": 7,
@@ -48,7 +48,7 @@
           },
           {
             "result": {
-              "duration": 45080000,
+              "duration": 42592000,
               "status": "passed"
             },
             "line": 8,
@@ -60,11 +60,11 @@
           },
           {
             "result": {
-              "duration": 279581000,
+              "duration": 271947000,
               "status": "passed"
             },
             "line": 9,
-            "name": "user enters auto_testuser_00000@mailinator.com and Abcd1234",
+            "name": "user enters auto_testuser_00000@mailinator.com and Abcd1234 in Sign In page",
             "match": {
               "arguments": [
                 {
@@ -76,13 +76,13 @@
                   "offset": 51
                 }
               ],
-              "location": "stepDef.StepDef.user_enters_email_and_password(java.lang.String,java.lang.String)"
+              "location": "stepDef.StepDef.user_enters_email_and_password_in_sign_in_page(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 85493000,
+              "duration": 96452000,
               "status": "passed"
             },
             "line": 10,
@@ -94,7 +94,7 @@
           },
           {
             "result": {
-              "duration": 1061714000,
+              "duration": 1074021000,
               "status": "passed"
             },
             "line": 11,
@@ -115,7 +115,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-05T17:15:50.789Z",
+        "start_timestamp": "2021-03-05T18:36:29.807Z",
         "line": 28,
         "name": "Validation test on Sign In page",
         "description": "",
@@ -123,7 +123,7 @@
         "after": [
           {
             "result": {
-              "duration": 79658000,
+              "duration": 90609000,
               "status": "passed"
             },
             "match": {
@@ -136,7 +136,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2116080000,
+              "duration": 2224270000,
               "status": "passed"
             },
             "line": 19,
@@ -148,7 +148,7 @@
           },
           {
             "result": {
-              "duration": 96979000,
+              "duration": 87585000,
               "status": "passed"
             },
             "line": 20,
@@ -160,7 +160,7 @@
           },
           {
             "result": {
-              "duration": 37771000,
+              "duration": 37447000,
               "status": "passed"
             },
             "line": 21,
@@ -172,11 +172,11 @@
           },
           {
             "result": {
-              "duration": 278569000,
+              "duration": 279318000,
               "status": "passed"
             },
             "line": 22,
-            "name": "user enters auto_testuser_0000z@mailinator.com and Abcd1234",
+            "name": "user enters auto_testuser_0000z@mailinator.com and Abcd1234 in Sign In page",
             "match": {
               "arguments": [
                 {
@@ -188,13 +188,13 @@
                   "offset": 51
                 }
               ],
-              "location": "stepDef.StepDef.user_enters_email_and_password(java.lang.String,java.lang.String)"
+              "location": "stepDef.StepDef.user_enters_email_and_password_in_sign_in_page(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 80141000,
+              "duration": 83530000,
               "status": "passed"
             },
             "line": 23,
@@ -206,7 +206,7 @@
           },
           {
             "result": {
-              "duration": 1059236000,
+              "duration": 1065743000,
               "status": "passed"
             },
             "line": 24,
@@ -230,7 +230,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-05T17:15:54.547Z",
+        "start_timestamp": "2021-03-05T18:36:33.684Z",
         "line": 29,
         "name": "Validation test on Sign In page",
         "description": "",
@@ -238,7 +238,7 @@
         "after": [
           {
             "result": {
-              "duration": 85811000,
+              "duration": 82831000,
               "status": "passed"
             },
             "match": {
@@ -251,7 +251,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2048697000,
+              "duration": 1941337000,
               "status": "passed"
             },
             "line": 19,
@@ -263,7 +263,7 @@
           },
           {
             "result": {
-              "duration": 93731000,
+              "duration": 95436000,
               "status": "passed"
             },
             "line": 20,
@@ -275,7 +275,7 @@
           },
           {
             "result": {
-              "duration": 41933000,
+              "duration": 42694000,
               "status": "passed"
             },
             "line": 21,
@@ -287,11 +287,11 @@
           },
           {
             "result": {
-              "duration": 282410000,
+              "duration": 266201000,
               "status": "passed"
             },
             "line": 22,
-            "name": "user enters auto_testuser_00000@mailinator.com and Abcd1235",
+            "name": "user enters auto_testuser_00000@mailinator.com and Abcd1235 in Sign In page",
             "match": {
               "arguments": [
                 {
@@ -303,13 +303,13 @@
                   "offset": 51
                 }
               ],
-              "location": "stepDef.StepDef.user_enters_email_and_password(java.lang.String,java.lang.String)"
+              "location": "stepDef.StepDef.user_enters_email_and_password_in_sign_in_page(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 84100000,
+              "duration": 86144000,
               "status": "passed"
             },
             "line": 23,
@@ -321,7 +321,7 @@
           },
           {
             "result": {
-              "duration": 1066510000,
+              "duration": 1060479000,
               "status": "passed"
             },
             "line": 24,
@@ -345,7 +345,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-05T17:15:58.258Z",
+        "start_timestamp": "2021-03-05T18:36:37.271Z",
         "line": 30,
         "name": "Validation test on Sign In page",
         "description": "",
@@ -353,7 +353,7 @@
         "after": [
           {
             "result": {
-              "duration": 94067000,
+              "duration": 86389000,
               "status": "passed"
             },
             "match": {
@@ -366,7 +366,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2194815000,
+              "duration": 2056738000,
               "status": "passed"
             },
             "line": 19,
@@ -378,7 +378,7 @@
           },
           {
             "result": {
-              "duration": 118964000,
+              "duration": 87275000,
               "status": "passed"
             },
             "line": 20,
@@ -390,7 +390,7 @@
           },
           {
             "result": {
-              "duration": 42447000,
+              "duration": 41858000,
               "status": "passed"
             },
             "line": 21,
@@ -402,11 +402,11 @@
           },
           {
             "result": {
-              "duration": 200302000,
+              "duration": 172819000,
               "status": "passed"
             },
             "line": 22,
-            "name": "user enters [blank] and Abcd1234",
+            "name": "user enters [blank] and Abcd1234 in Sign In page",
             "match": {
               "arguments": [
                 {
@@ -418,13 +418,13 @@
                   "offset": 24
                 }
               ],
-              "location": "stepDef.StepDef.user_enters_email_and_password(java.lang.String,java.lang.String)"
+              "location": "stepDef.StepDef.user_enters_email_and_password_in_sign_in_page(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 91983000,
+              "duration": 59124000,
               "status": "passed"
             },
             "line": 23,
@@ -436,7 +436,7 @@
           },
           {
             "result": {
-              "duration": 1124346000,
+              "duration": 1060862000,
               "status": "passed"
             },
             "line": 24,
@@ -460,7 +460,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-05T17:16:02.133Z",
+        "start_timestamp": "2021-03-05T18:36:40.843Z",
         "line": 31,
         "name": "Validation test on Sign In page",
         "description": "",
@@ -468,7 +468,7 @@
         "after": [
           {
             "result": {
-              "duration": 92612000,
+              "duration": 85401000,
               "status": "passed"
             },
             "match": {
@@ -481,7 +481,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2755486000,
+              "duration": 1943517000,
               "status": "passed"
             },
             "line": 19,
@@ -493,7 +493,7 @@
           },
           {
             "result": {
-              "duration": 103697000,
+              "duration": 97458000,
               "status": "passed"
             },
             "line": 20,
@@ -505,7 +505,7 @@
           },
           {
             "result": {
-              "duration": 40384000,
+              "duration": 41611000,
               "status": "passed"
             },
             "line": 21,
@@ -517,11 +517,11 @@
           },
           {
             "result": {
-              "duration": 281748000,
+              "duration": 242009000,
               "status": "passed"
             },
             "line": 22,
-            "name": "user enters auto_testuser_00000@mailinator.com and [blank]",
+            "name": "user enters auto_testuser_00000@mailinator.com and [blank] in Sign In page",
             "match": {
               "arguments": [
                 {
@@ -533,13 +533,13 @@
                   "offset": 51
                 }
               ],
-              "location": "stepDef.StepDef.user_enters_email_and_password(java.lang.String,java.lang.String)"
+              "location": "stepDef.StepDef.user_enters_email_and_password_in_sign_in_page(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 91624000,
+              "duration": 89234000,
               "status": "passed"
             },
             "line": 23,
@@ -551,7 +551,7 @@
           },
           {
             "result": {
-              "duration": 1066433000,
+              "duration": 1064197000,
               "status": "passed"
             },
             "line": 24,
@@ -579,10 +579,978 @@
     "description": "",
     "id": "test-sign-in-on-realworld-website",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/Login.feature",
+    "uri": "file:src/test/resources/features/SignIn.feature",
     "tags": [
       {
         "name": "@signin",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-03-05T18:36:44.414Z",
+        "line": 5,
+        "name": "Test signing up with unique username and email, and a valid password",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;test-signing-up-with-unique-username-and-email--and-a-valid-password",
+        "after": [
+          {
+            "result": {
+              "duration": 94857000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2099164000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 91957000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 51038000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 369113000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user inserts unique username and email, and a valid password",
+            "match": {
+              "location": "stepDef.StepDef.user_inserts_unique_username_and_email_and_a_valid_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 77604000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1057743000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "successfully signed up username hypertext will be displayed",
+            "match": {
+              "location": "stepDef.StepDef.successfully_signed_up_username_hypertext_will_be_displayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17308000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user will be redirected back to home page",
+            "match": {
+              "location": "stepDef.StepDef.user_will_be_redirected_back_to_home_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          },
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:36:48.280Z",
+        "line": 25,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 88093000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2091782000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 96187000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 45989000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 370404000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters auto_testuser_99000, auto_testuser_00000@mailinator.com and Abcd1234 in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "auto_testuser_99000",
+                  "offset": 12
+                },
+                {
+                  "val": "auto_testuser_00000@mailinator.com",
+                  "offset": 33
+                },
+                {
+                  "val": "Abcd1234",
+                  "offset": 72
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 79378000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1569303000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"email has already been taken\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "email has already been taken",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:36:52.626Z",
+        "line": 26,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 85834000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2087236000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 84260000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 50099000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 355986000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters auto_testuser_00000, auto_testuser_99900@mailinator.com and Abcd1234 in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "auto_testuser_00000",
+                  "offset": 12
+                },
+                {
+                  "val": "auto_testuser_99900@mailinator.com",
+                  "offset": 33
+                },
+                {
+                  "val": "Abcd1234",
+                  "offset": 72
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 77659000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1073814000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"username has already been taken\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "username has already been taken",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:36:56.447Z",
+        "line": 27,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 86725000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1949544000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 91449000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 50351000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 326738000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters [blank], auto_testuser_99900@mailinator.com and Abcd1234 in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "[blank]",
+                  "offset": 12
+                },
+                {
+                  "val": "auto_testuser_99900@mailinator.com",
+                  "offset": 21
+                },
+                {
+                  "val": "Abcd1234",
+                  "offset": 60
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 86713000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected [true] but found [false]\n\tat org.testng.Assert.fail(Assert.java:99)\n\tat org.testng.Assert.failNotEquals(Assert.java:1037)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:140)\n\tat org.testng.Assert.assertEquals(Assert.java:122)\n\tat org.testng.Assert.assertEquals(Assert.java:819)\n\tat org.testng.Assert.assertEquals(Assert.java:829)\n\tat stepDef.StepDef.sign_up_error_message_prompted(StepDef.java:95)\n\tat ✽.sign up error message prompted \"username can\u0027t be blank (minimum is 1 character)\"(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/SignUp.feature:21)\n",
+              "duration": 1090890000,
+              "status": "failed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"username can\u0027t be blank (minimum is 1 character)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "username can\u0027t be blank (minimum is 1 character)",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:37:00.142Z",
+        "line": 28,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;5",
+        "after": [
+          {
+            "result": {
+              "duration": 96773000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2282623000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 88441000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 43164000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 292121000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters auto_testuser_99000, [blank] and Abcd1234 in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "auto_testuser_99000",
+                  "offset": 12
+                },
+                {
+                  "val": "[blank]",
+                  "offset": 33
+                },
+                {
+                  "val": "Abcd1234",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 66150000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1082123000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"email can\u0027t be blank\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "email can\u0027t be blank",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:37:04.101Z",
+        "line": 29,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;6",
+        "after": [
+          {
+            "result": {
+              "duration": 91638000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2298752000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 94602000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 44560000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 339917000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters auto_testuser_99000, auto_testuser_99900@mailinator.com and [blank] in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "auto_testuser_99000",
+                  "offset": 12
+                },
+                {
+                  "val": "auto_testuser_99900@mailinator.com",
+                  "offset": 33
+                },
+                {
+                  "val": "[blank]",
+                  "offset": 72
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 82105000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1593362000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"password can\u0027t be blank\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "password can\u0027t be blank",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:37:08.652Z",
+        "line": 30,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;7",
+        "after": [
+          {
+            "result": {
+              "duration": 87395000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2208357000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 84615000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46870000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 392804000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters a12345678901234567890, auto_testuser_99900@mailinator.com and Abcd1234 in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "a12345678901234567890",
+                  "offset": 12
+                },
+                {
+                  "val": "auto_testuser_99900@mailinator.com",
+                  "offset": 35
+                },
+                {
+                  "val": "Abcd1234",
+                  "offset": 74
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 82937000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1096930000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"username is too long (maximum is 20 characters)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "username is too long (maximum is 20 characters)",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-05T18:37:12.660Z",
+        "line": 31,
+        "name": "Validation test on Sign Up page",
+        "description": "",
+        "id": "test-sign-up-in-realworld-website;validation-test-on-sign-up-page;;8",
+        "after": [
+          {
+            "result": {
+              "duration": 94735000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDef.StepDef.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2357240000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user is on homepage",
+            "match": {
+              "location": "stepDef.StepDef.user_is_on_homepage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 127431000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "clicks on Sign up hypertext",
+            "match": {
+              "location": "stepDef.StepDef.clicks_on_sign_up_hypertext()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 43954000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Sign Up page is loaded successfully",
+            "match": {
+              "location": "stepDef.StepDef.sign_up_page_is_loaded_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 467370000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user enters auto_testuser_99000, auto_testuser_99900@mailinator.com and 1234567890123456789012345678901234567890123456789012345678901234567890Abc in Sign Up page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "auto_testuser_99000",
+                  "offset": 12
+                },
+                {
+                  "val": "auto_testuser_99900@mailinator.com",
+                  "offset": 33
+                },
+                {
+                  "val": "1234567890123456789012345678901234567890123456789012345678901234567890Abc",
+                  "offset": 72
+                }
+              ],
+              "location": "stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 72574000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on Sign in button",
+            "match": {
+              "location": "stepDef.StepDef.click_on_sign_in_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1073465000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sign up error message prompted \"password is too long (maximum is 72 characters)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "password is too long (maximum is 72 characters)",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@signup"
+          }
+        ]
+      }
+    ],
+    "name": "Test Sign-Up in realworld website",
+    "description": "",
+    "id": "test-sign-up-in-realworld-website",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/SignUp.feature",
+    "tags": [
+      {
+        "name": "@signup",
         "type": "Tag",
         "location": {
           "line": 1,

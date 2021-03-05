@@ -41,8 +41,8 @@ public class StepDef {
         signUp.validateSignUpPage(driver);
     }
 
-    @When("^user enters unique username and email, and a valid password$")
-    public void user_enters_unique_username_and_email_and_a_valid_password()
+    @When("^user inserts unique username and email, and a valid password$")
+    public void user_inserts_unique_username_and_email_and_a_valid_password()
     {
         String uniqueKey = ugen.getUniqueKey();
         String username = "user" + uniqueKey;
@@ -56,8 +56,8 @@ public class StepDef {
         signUp.enterPassword(driver, "Abcd1234");
     }
 
-    @When("^user enters (.+) , (.+) and (.+)$")
-    public void user_enters_username_email_and_password(String username, String email, String password)
+    @When("^user enters (.+), (.+) and (.+) in Sign Up page$")
+    public void user_enters_username_email_and_password_in_sign_up_page(String username, String email, String password)
     {
         System.out.print(" username: " + username);
         username = username.replace("[blank]", "");
@@ -106,8 +106,8 @@ public class StepDef {
         signIn.validateSignInPage(driver);
     }
 
-    @When("^user enters (.+) and (.+)$")
-    public void user_enters_email_and_password(String email, String password)
+    @When("^user enters (.+) and (.+) in Sign In page$")
+    public void user_enters_email_and_password_in_sign_in_page(String email, String password)
     {
         email = email.replace("[blank]", "");
         password = password.replace("[blank]", "");
