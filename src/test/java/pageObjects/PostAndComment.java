@@ -7,9 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import util.ElementHelper;
 
 import java.time.Duration;
+import java.util.List;
 
 
-public class NewPost {
+public class PostAndComment {
 
     private String articleTitleTFXPath = ".//*[@placeholder='Article Title']";
 
@@ -20,6 +21,8 @@ public class NewPost {
     private String tagsXPath = ".//*[@placeholder='Enter tags']";
 
     private String publishArticleBtnXPath = ".//button[text()='Publish Article']";
+
+    private String newPostErrorMsg = ".//ul[@class='error-messages']/li";
 
 
     public void enterArticleTitle(WebDriver driver, String articleTitle)
@@ -55,6 +58,20 @@ public class NewPost {
         new WebDriverWait(driver, Duration.ofSeconds(10)).
                 until(ExpectedConditions.elementToBeClickable(By.xpath(publishArticleBtnXPath)))
                 .click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<String> getNewPostErrorMsgs(WebDriver driver)
+    {
+        ElementHelper eh = new ElementHelper();
+        List<String> strOnScreenErrMsgs = eh.captureElementTextsList(driver, newPostErrorMsg);
+
+        return strOnScreenErrMsgs;
     }
 
     public void validateNewPostPage(WebDriver driver)

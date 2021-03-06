@@ -26,7 +26,7 @@ public class ElementHelper {
         }
     }
 
-    public List<String> elementTextsList(WebDriver driver, String xpath)
+    public List<String> captureElementTextsList(WebDriver driver, String xpath)
     {
         List<String> elementTextsList = new ArrayList<>();
 

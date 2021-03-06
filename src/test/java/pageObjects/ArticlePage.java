@@ -9,7 +9,7 @@ import util.ElementHelper;
 import java.time.Duration;
 
 
-public class AuthorArticlePage {
+public class ArticlePage {
 
     private String articleTitleLblPath = ".//div/h1";
 
@@ -29,12 +29,12 @@ public class AuthorArticlePage {
 
     private String lastCommentAuthorHypertext = "(.//a[@class='comment-author'])[2]";
 
-
-    public void enterComment(WebDriver driver, String articleTitle)
+    public void enterComment(WebDriver driver, String comment)
     {
         new WebDriverWait(driver, Duration.ofSeconds(10)).
                 until(ExpectedConditions.presenceOfElementLocated(By.xpath(commentTAXPath)))
-                .sendKeys(articleTitle);
+                .sendKeys(comment);
+        System.out.println(" ***** " + comment);
     }
 
     public void clickPostCommentBtn(WebDriver driver)
@@ -44,22 +44,23 @@ public class AuthorArticlePage {
                 .click();
     }
 
-
-    public void validateArticlePageUI(WebDriver driver)
+    public void validateArticlePageUI(WebDriver driver, Boolean isAuthor)
     {
         ElementHelper eh = new ElementHelper();
 
-        //Validate presence of Article Title Label
-        eh.validatePresenceOfElement(driver, articleTitleLblPath);
+        if(isAuthor) {
+            //Validate presence of Article Title Label
+            eh.validatePresenceOfElement(driver, articleTitleLblPath);
 
-        //Validate presence of Author's username hypertext
-        eh.validatePresenceOfElement(driver, authorNameHypertextXPath);
+            //Validate presence of Author's username hypertext
+            eh.validatePresenceOfElement(driver, authorNameHypertextXPath);
 
-        //Validate presence of Edit Article button
-        eh.validatePresenceOfElement(driver, editArticleBtnXPath);
+            //Validate presence of Edit Article button
+            eh.validatePresenceOfElement(driver, editArticleBtnXPath);
 
-        //Validate presence of Delete Article button
-        eh.validatePresenceOfElement(driver, deleteArticleBtnXPath);
+            //Validate presence of Delete Article button
+            eh.validatePresenceOfElement(driver, deleteArticleBtnXPath);
+        }
 
         //Validate presence of ArticleMarkdownParagraph
         eh.validatePresenceOfElement(driver, articleMarkdownParagraphXPath);

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Web Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Mar 06 18:13:17 SGT 2021</td>
+<td>Started on:</td><td>Sun Mar 07 03:22:32 SGT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>13 seconds (13340 ms)</td>
+<tr><td>Total time:</td><td>48 seconds (48923 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,50 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Test Validation in new post page form", "Optional[Test creating New Post in realworld website]"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+	at ?.validation message &quot;description can&apos;t be blank (minimum is 1 character)&quot; appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2081041838", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2081041838'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+	at ?.validation message &quot;description can&apos;t be blank (minimum is 1 character)&quot; appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
+</pre></div></td>
+<td>8</td>
+<td>testRunner.TestRunner@55a1c291</td></tr>
+<tr>
+<td title='testRunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Test Validation in new post page form", "Optional[Test creating New Post in realworld website]"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+	at ?.validation message &quot;title can&apos;t be blank (minimum is 1 character)&quot; appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace629066790", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace629066790'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+	at ?.validation message &quot;title can&apos;t be blank (minimum is 1 character)&quot; appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
+</pre></div></td>
+<td>7</td>
+<td>testRunner.TestRunner@55a1c291</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,9 +119,19 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='testRunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Posting comment on article that belongs to other user", "Optional[Test creating New Post in realworld website]"</td>
+<td></td>
+<td>8</td>
+<td>testRunner.TestRunner@55a1c291</td></tr>
+<tr>
 <td title='testRunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Test creating new post successfully", "Optional[Test creating New Post in realworld website]"</td>
 <td></td>
-<td>12</td>
+<td>15</td>
+<td>testRunner.TestRunner@55a1c291</td></tr>
+<tr>
+<td title='testRunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Test Validation in new post page form", "Optional[Test creating New Post in realworld website]"</td>
+<td></td>
+<td>7</td>
 <td>testRunner.TestRunner@55a1c291</td></tr>
 </table><p>
 </body>

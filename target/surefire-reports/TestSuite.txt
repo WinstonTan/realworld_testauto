@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.677 sec - in TestSuite
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 49.307 sec <<< FAILURE! - in TestSuite
+runScenario(testRunner.TestRunner)  Time elapsed: 7.844 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+
+runScenario(testRunner.TestRunner)  Time elapsed: 8.713 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+

@@ -59,13 +59,8 @@ public class SignIn {
 
     public List<String> getSignInErrorMsgs(WebDriver driver)
     {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(
-                ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(signInErrorMsg)));
-
-        List<WebElement> onScreenErrMsgs = driver.findElements(By.xpath(signInErrorMsg));
-        List<String> strOnScreenErrMsgs = new ArrayList<>();
-
-        onScreenErrMsgs.forEach(e ->strOnScreenErrMsgs.add(e.getText()));
+        ElementHelper eh = new ElementHelper();
+        List<String> strOnScreenErrMsgs = eh.captureElementTextsList(driver, signInErrorMsg);
 
         return strOnScreenErrMsgs;
     }

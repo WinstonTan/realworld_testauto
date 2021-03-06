@@ -3,6 +3,7 @@ package stepDef;
 import driverFactory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,8 +21,9 @@ public class StepDef {
     Home home = new Home();
     SignUp signUp = new SignUp();
     SignIn signIn = new SignIn();
-    NewPost newPost = new NewPost();
-    AuthorArticlePage authorArticlePage = new AuthorArticlePage();
+    PostAndComment postAndComment = new PostAndComment();
+    ArticlePage articlePage = new ArticlePage();
+    Profile profile = new Profile();
 
     private String currentUsername;
     private String lastCreatedArticleTitle;
@@ -33,7 +35,7 @@ public class StepDef {
     String timestamp = ugen.getTimestamp();
 
     @Before
-    public void setup()
+    public void setup(Scenario scenario)
     {
         driver = new DriverFactory().initBrowser();
     }
@@ -144,7 +146,7 @@ public class StepDef {
     @Then("^New Post page is loaded successfully$")
     public void new_post_page_is_loaded_successfully()
     {
-        newPost.validateNewPostPage(driver);
+        postAndComment.validateNewPostPage(driver);
     }
 
     @When("^user enters valid articleTitle, aboutArticle, articleMarkdown and tags in New Post page$")
@@ -155,46 +157,46 @@ public class StepDef {
         lastCreatedArticleMarkdown = "article_markdown " + timestamp;
         String tags = "test_" + timestamp;
 
-        newPost.enterArticleTitle(driver, lastCreatedArticleTitle);
-        newPost.enterAboutThisArticle(driver, lastAboutArticle);
-        newPost.enterWriteYourArticleInMarkDown(driver, lastCreatedArticleMarkdown);
-        newPost.enterTags(driver, tags);
+        postAndComment.enterArticleTitle(driver, lastCreatedArticleTitle);
+        postAndComment.enterAboutThisArticle(driver, lastAboutArticle);
+        postAndComment.enterWriteYourArticleInMarkDown(driver, lastCreatedArticleMarkdown);
+        postAndComment.enterTags(driver, tags);
     }
 
     @And("^click on Publish Article button$")
     public void click_on_publish_article_button()
     {
-        newPost.clickPublishArticleBtn(driver);
+        postAndComment.clickPublishArticleBtn(driver);
     }
 
     @Then("^target Author Article Page created and loaded successful$")
     public void target_article_page_created_and_loaded_successful()
     {
-        authorArticlePage.validateArticlePageUI(driver);
+        articlePage.validateArticlePageUI(driver, true);
 
-        Assert.assertEquals(authorArticlePage.getArticleTitle(driver), lastCreatedArticleTitle);
-        Assert.assertEquals(authorArticlePage.getAuthorName(driver), currentUsername);
-        Assert.assertEquals(authorArticlePage.getArticleMarkdownParagraph(driver), lastCreatedArticleMarkdown);
+        Assert.assertEquals(articlePage.getArticleTitle(driver), lastCreatedArticleTitle);
+        Assert.assertEquals(articlePage.getAuthorName(driver), currentUsername);
+        Assert.assertEquals(articlePage.getArticleMarkdownParagraph(driver), lastCreatedArticleMarkdown);
     }
 
     @When("^user enters comment$")
-    public void user_enters_comment()
-    {
+    public void user_enters_comment() {
         lastCommentText = "Test comment 1 2 3 " + timestamp;
-        authorArticlePage.enterComment(driver, lastCommentText);
+        articlePage.enterComment(driver, lastCommentText);
+
     }
 
     @And("^click on Post Comment button$")
-    public void click_on_post_comment_button()
-    {
-        authorArticlePage.clickPostCommentBtn(driver);
+    public void click_on_post_comment_button() throws InterruptedException {
+        articlePage.clickPostCommentBtn(driver);
+        Thread.sleep(2000);
     }
 
     @Then("^new comment card entry is created and displaying on Article page$")
     public void new_comment_card_entry_is_created_and_displaying_on_article_page()
     {
-        Assert.assertEquals(authorArticlePage.getLastCommentCardText(driver), lastCommentText);
-        Assert.assertEquals(authorArticlePage.getLastCommentAuthorHypertext(driver), currentUsername);
+        Assert.assertEquals(articlePage.getLastCommentCardText(driver), lastCommentText);
+        Assert.assertEquals(articlePage.getLastCommentAuthorHypertext(driver), currentUsername);
     }
 
     @When("^user navigates to Home page again$")
@@ -225,7 +227,54 @@ public class StepDef {
         Assert.assertEquals(globalFeedTitlesList.size(), 10);
     }
 
+    @And("^click on the top Global Feed article title$")
+    public void click_on_the_top_global_feed_article_title()
+    {
+        home.clickLastGlobalFeedTitle(driver);
+    }
 
+    @Then("^the target article page will be opened$")
+    public void the_target_article_page_will_be_opened()
+    {
+        articlePage.validateArticlePageUI(driver, false);
+    }
+
+    @When("^user enters (.+), (.+), (.+) and (.+) in Post form$")
+    public void user_enters_articleTitle_aboutArticle_articleMarkdown_and_tags_in_new_post_page(
+            String articleTitle, String aboutArticle, String articleMarkdown, String tags)
+    {
+        articleTitle = articleTitle.replace("[blank]", "");
+        aboutArticle = aboutArticle.replace("[blank]", "");
+        articleMarkdown = articleMarkdown.replace("[blank]", "");
+        tags = tags.replace("[blank]", "");
+
+        postAndComment.enterArticleTitle(driver, articleTitle);
+        postAndComment.enterAboutThisArticle(driver, aboutArticle);
+        postAndComment.enterWriteYourArticleInMarkDown(driver, articleMarkdown);
+        postAndComment.enterTags(driver, tags);
+    }
+
+    @Then("^validation message \"(.+)\" appears on new post page$")
+    public void validation_message_appears_on_new_post_page(String errorMsg)
+    {
+        Assert.assertEquals(
+                postAndComment.getNewPostErrorMsgs(driver)
+                        .contains(errorMsg),
+                true);
+    }
+
+    @And("^user click on own username hypertext on top right$")
+    public void user_click_on_own_username_hypertext_on_top_right()
+    {
+        profile.clickOwnProfileHypertextByUsername(driver, currentUsername);
+    }
+
+    @Then("^the last Article title will displayed in My Articles listing on profile page$")
+    public void the_last_article_title_will_displayed_in_my_articles_listing_on_profile_page()
+    {
+        Assert.assertEquals(profile.getLastCreatedArticleTitle(driver)
+            , lastCreatedArticleTitle);
+    }
 
     @After
     public void tearDown()

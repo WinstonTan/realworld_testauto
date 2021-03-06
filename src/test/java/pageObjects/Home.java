@@ -8,7 +8,6 @@ import org.testng.Assert;
 import util.ElementHelper;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,9 +35,8 @@ public class Home {
 
     private String globalFeedTitleListXPath = ".//a[@class='preview-link']/h1";
 
-    private List<String> page1GlobalFeedTitles = new ArrayList<>();
+    private String lastGlobalFeedTitleXPath = "(.//a[@class='preview-link']/h1)[1]";
 
-    private List<String> page1GlobalFeedAuthors = new ArrayList<>();
     ElementHelper eh = new ElementHelper();
 
 
@@ -65,18 +63,25 @@ public class Home {
     public List<String> getPage1GlobalFeedTitles(WebDriver driver)
     {
 
-        return eh.elementTextsList(driver, globalFeedTitleListXPath);
+        return eh.captureElementTextsList(driver, globalFeedTitleListXPath);
     }
 
     public List<String> getPage1GlobalFeedAuthors(WebDriver driver)
     {
-        return eh.elementTextsList(driver, globalFeedAuthorListXPath);
+        return eh.captureElementTextsList(driver, globalFeedAuthorListXPath);
     }
 
     public void clickGlobalFeedTabHeader(WebDriver driver)
     {
         new WebDriverWait(driver, Duration.ofSeconds(10)).
                 until(ExpectedConditions.elementToBeClickable(By.xpath(globalFeedTabHypertextXPath)))
+                .click();
+    }
+
+    public void clickLastGlobalFeedTitle(WebDriver driver)
+    {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).
+                until(ExpectedConditions.elementToBeClickable(By.xpath(lastGlobalFeedTitleXPath)))
                 .click();
     }
 
@@ -122,5 +127,4 @@ public class Home {
                 until(ExpectedConditions.elementToBeClickable(By.xpath(newPostHypertextXPath)))
                 .click();
     }
-
 }

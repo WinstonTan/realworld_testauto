@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="13.677" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="49.307" tests="5" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="cucumber.options" value="--tags @post"/>
@@ -55,5 +55,85 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="12.86"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="15.786"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.335"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.844">
+    <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+</failure>
+    <system-out><![CDATA[
+@post
+Scenario Outline: Test Validation in new post page form                                            &amp#27;[90m# src/test/resources/features/Post.feature:54&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on homepage&amp#27;[0m                                                                        &amp#27;[90m# stepDef.StepDef.user_is_on_homepage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on Sign up hypertext&amp#27;[0m                                                                  &amp#27;[90m# stepDef.StepDef.clicks_on_sign_up_hypertext()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mSign Up page is loaded successfully&amp#27;[0m                                                         &amp#27;[90m# stepDef.StepDef.sign_up_page_is_loaded_successfully()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser inserts unique username and email, and a valid password&amp#27;[0m                                &amp#27;[90m# stepDef.StepDef.user_inserts_unique_username_and_email_and_a_valid_password()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Sign in button&amp#27;[0m                                                                      &amp#27;[90m# stepDef.StepDef.click_on_sign_in_button()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32msuccessfully signed up username hypertext will be displayed&amp#27;[0m                                 &amp#27;[90m# stepDef.StepDef.successfully_signed_up_username_hypertext_will_be_displayed()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser will be redirected back to home page&amp#27;[0m                                                   &amp#27;[90m# stepDef.StepDef.user_will_be_redirected_back_to_home_page()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on New Post hypertext&amp#27;[0m                                                                 &amp#27;[90m# stepDef.StepDef.clicks_on_new_post_hypertext()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mNew Post page is loaded successfully&amp#27;[0m                                                        &amp#27;[90m# stepDef.StepDef.new_post_page_is_loaded_successfully()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters &amp#27;[0m&amp#27;[32m&amp#27;[1m[blank]&amp#27;[0m&amp#27;[32m, &amp#27;[0m&amp#27;[32m&amp#27;[1mAbout ������ 456&amp#27;[0m&amp#27;[32m, &amp#27;[0m&amp#27;[32m&amp#27;[1mL49tKOXkRt3fC8fO9sA9dqgXSfboBj&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1mtestTag1&amp#27;[0m&amp#27;[32m in Post form&amp#27;[0m &amp#27;[90m# stepDef.StepDef.user_enters_articleTitle_aboutArticle_articleMarkdown_and_tags_in_new_post_page(java.lang.String,java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Publish Article button&amp#27;[0m                                                              &amp#27;[90m# stepDef.StepDef.click_on_publish_article_button()&amp#27;[0m
+  &amp#27;[31mThen &amp#27;[0m&amp#27;[31mvalidation message "&amp#27;[0m&amp#27;[31m&amp#27;[1mtitle can't be blank (minimum is 1 character)&amp#27;[0m&amp#27;[31m" appears on new post page&amp#27;[0m &amp#27;[90m# stepDef.StepDef.validation_message_appears_on_new_post_page(java.lang.String)&amp#27;[0m
+      &amp#27;[31mjava.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+	at ���.validation message "title can't be blank (minimum is 1 character)" appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
+&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 10403
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Mar 07, 2021 3:22:57 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Mar 07, 2021 3:22:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 89
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.713">
+    <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+</failure>
+    <system-out><![CDATA[
+@post
+Scenario Outline: Test Validation in new post page form                                                  &amp#27;[90m# src/test/resources/features/Post.feature:55&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on homepage&amp#27;[0m                                                                              &amp#27;[90m# stepDef.StepDef.user_is_on_homepage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on Sign up hypertext&amp#27;[0m                                                                        &amp#27;[90m# stepDef.StepDef.clicks_on_sign_up_hypertext()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mSign Up page is loaded successfully&amp#27;[0m                                                               &amp#27;[90m# stepDef.StepDef.sign_up_page_is_loaded_successfully()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser inserts unique username and email, and a valid password&amp#27;[0m                                      &amp#27;[90m# stepDef.StepDef.user_inserts_unique_username_and_email_and_a_valid_password()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Sign in button&amp#27;[0m                                                                            &amp#27;[90m# stepDef.StepDef.click_on_sign_in_button()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32msuccessfully signed up username hypertext will be displayed&amp#27;[0m                                       &amp#27;[90m# stepDef.StepDef.successfully_signed_up_username_hypertext_will_be_displayed()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser will be redirected back to home page&amp#27;[0m                                                         &amp#27;[90m# stepDef.StepDef.user_will_be_redirected_back_to_home_page()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on New Post hypertext&amp#27;[0m                                                                       &amp#27;[90m# stepDef.StepDef.clicks_on_new_post_hypertext()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mNew Post page is loaded successfully&amp#27;[0m                                                              &amp#27;[90m# stepDef.StepDef.new_post_page_is_loaded_successfully()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters &amp#27;[0m&amp#27;[32m&amp#27;[1m������������789 HiJ&amp#27;[0m&amp#27;[32m, &amp#27;[0m&amp#27;[32m&amp#27;[1m[blank]&amp#27;[0m&amp#27;[32m, &amp#27;[0m&amp#27;[32m&amp#27;[1mL49tKOXkRt3fC8fO9sA9dqgXSfboBj&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1mtestTag2&amp#27;[0m&amp#27;[32m in Post form&amp#27;[0m        &amp#27;[90m# stepDef.StepDef.user_enters_articleTitle_aboutArticle_articleMarkdown_and_tags_in_new_post_page(java.lang.String,java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Publish Article button&amp#27;[0m                                                                    &amp#27;[90m# stepDef.StepDef.click_on_publish_article_button()&amp#27;[0m
+  &amp#27;[31mThen &amp#27;[0m&amp#27;[31mvalidation message "&amp#27;[0m&amp#27;[31m&amp#27;[1mdescription can't be blank (minimum is 1 character)&amp#27;[0m&amp#27;[31m" appears on new post page&amp#27;[0m &amp#27;[90m# stepDef.StepDef.validation_message_appears_on_new_post_page(java.lang.String)&amp#27;[0m
+      &amp#27;[31mjava.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:819)
+	at org.testng.Assert.assertEquals(Assert.java:829)
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+	at ���.validation message "description can't be blank (minimum is 1 character)" appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
+&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 35697
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Mar 07, 2021 3:23:05 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Mar 07, 2021 3:23:05 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 89
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.579"/>
 </testsuite>
