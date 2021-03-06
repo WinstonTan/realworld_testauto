@@ -2,30 +2,44 @@ package stepDef;
 
 import driverFactory.DriverFactory;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import pageObjects.Home;
-import pageObjects.SignIn;
-import pageObjects.SignUp;
-import util.UniqueKeyGenerator;
+import pageObjects.*;
+import util.TimeStampGenerator;
+
+import java.util.List;
 
 public class StepDef {
 
     WebDriver driver;
     Home home = new Home();
     SignUp signUp = new SignUp();
-    String currentUsername;
     SignIn signIn = new SignIn();
+    NewPost newPost = new NewPost();
+    AuthorArticlePage authorArticlePage = new AuthorArticlePage();
 
-    UniqueKeyGenerator ugen = new UniqueKeyGenerator();
+    private String currentUsername;
+    private String lastCreatedArticleTitle;
+    private String lastAboutArticle;
+    private String lastCreatedArticleMarkdown;
+    private String lastCommentText;
+
+    TimeStampGenerator ugen = new TimeStampGenerator();
+    String timestamp = ugen.getTimestamp();
+
+    @Before
+    public void setup()
+    {
+        driver = new DriverFactory().initBrowser();
+    }
 
     @Given("^user is on homepage$")
     public void user_is_on_homepage(){
-        driver = new DriverFactory().initBrowser();
         driver.get("https://react-redux.realworld.io/");
         home.validateHomePageAnonymous(driver);
     }
@@ -44,8 +58,8 @@ public class StepDef {
     @When("^user inserts unique username and email, and a valid password$")
     public void user_inserts_unique_username_and_email_and_a_valid_password()
     {
-        String uniqueKey = ugen.getUniqueKey();
-        String username = "user" + uniqueKey;
+
+        String username = "user" + timestamp;
         String email = username + "@mailinator.com";
 
         //Caching current Username
@@ -120,6 +134,98 @@ public class StepDef {
     public void sign_in_error_message_prompted(String errorMsg) throws InterruptedException {
         Assert.assertEquals(signIn.getSignInErrorMsgs(driver).contains(errorMsg), true);
     }
+
+    @And("^clicks on New Post hypertext$")
+    public void clicks_on_new_post_hypertext()
+    {
+        home.clickNewPostHypertext(driver);
+    }
+
+    @Then("^New Post page is loaded successfully$")
+    public void new_post_page_is_loaded_successfully()
+    {
+        newPost.validateNewPostPage(driver);
+    }
+
+    @When("^user enters valid articleTitle, aboutArticle, articleMarkdown and tags in New Post page$")
+    public void user_enters_valid_articleTitle_aboutArticle_articleMarkdown_and_tags_in_new_post_page()
+    {
+        lastCreatedArticleTitle = "title_" + timestamp;
+        lastAboutArticle = "about_article: " + timestamp;
+        lastCreatedArticleMarkdown = "article_markdown " + timestamp;
+        String tags = "test_" + timestamp;
+
+        newPost.enterArticleTitle(driver, lastCreatedArticleTitle);
+        newPost.enterAboutThisArticle(driver, lastAboutArticle);
+        newPost.enterWriteYourArticleInMarkDown(driver, lastCreatedArticleMarkdown);
+        newPost.enterTags(driver, tags);
+    }
+
+    @And("^click on Publish Article button$")
+    public void click_on_publish_article_button()
+    {
+        newPost.clickPublishArticleBtn(driver);
+    }
+
+    @Then("^target Author Article Page created and loaded successful$")
+    public void target_article_page_created_and_loaded_successful()
+    {
+        authorArticlePage.validateArticlePageUI(driver);
+
+        Assert.assertEquals(authorArticlePage.getArticleTitle(driver), lastCreatedArticleTitle);
+        Assert.assertEquals(authorArticlePage.getAuthorName(driver), currentUsername);
+        Assert.assertEquals(authorArticlePage.getArticleMarkdownParagraph(driver), lastCreatedArticleMarkdown);
+    }
+
+    @When("^user enters comment$")
+    public void user_enters_comment()
+    {
+        lastCommentText = "Test comment 1 2 3 " + timestamp;
+        authorArticlePage.enterComment(driver, lastCommentText);
+    }
+
+    @And("^click on Post Comment button$")
+    public void click_on_post_comment_button()
+    {
+        authorArticlePage.clickPostCommentBtn(driver);
+    }
+
+    @Then("^new comment card entry is created and displaying on Article page$")
+    public void new_comment_card_entry_is_created_and_displaying_on_article_page()
+    {
+        Assert.assertEquals(authorArticlePage.getLastCommentCardText(driver), lastCommentText);
+        Assert.assertEquals(authorArticlePage.getLastCommentAuthorHypertext(driver), currentUsername);
+    }
+
+    @When("^user navigates to Home page again$")
+    public void user_navigates_to_home_page_again()
+    {
+        home.clickHome(driver);
+    }
+
+    @And("^click on Global Feed tab header$")
+    public void click_on_global_feed_tab_header()
+    {
+        home.clickGlobalFeedTabHeader(driver);
+    }
+
+    @Then("^the top 10 latest feeds will be displayed on Global Feed listing$")
+    public void the_top_10_latest_feeds_will_be_isplayed_on_global_feed_listing()
+    {
+        List<String> globalFeedTitlesList = home.getPage1GlobalFeedTitles(driver);
+        Assert.assertEquals(globalFeedTitlesList.contains(lastCreatedArticleTitle),
+                true);
+
+        globalFeedTitlesList.forEach(s -> System.out.println("Global Feed: " + s));
+
+        Assert.assertEquals(home.getPage1GlobalFeedAuthors(driver)
+                .contains(currentUsername),
+                true);
+
+        Assert.assertEquals(globalFeedTitlesList.size(), 10);
+    }
+
+
 
     @After
     public void tearDown()

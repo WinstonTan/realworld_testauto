@@ -10,10 +10,9 @@ import io.cucumber.testng.CucumberOptions;
                 },
         features = {"src/test/resources/features/"},
         glue = {"stepDef"},
-        tags = "@signin or @signup"
+        tags = "@post"
         )
 
-
-public class SignUpTestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests {
 
 }

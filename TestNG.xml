@@ -4,7 +4,7 @@
     <test name="Web Test" parallel="false">
         <parameter name="browserType" value="macOS_chrome"></parameter>
          <classes>
-            <class name="testRunner.SignUpTestRunner"/>
+            <class name="testRunner.TestRunner"/>
         </classes>
     </test>
 </suite>

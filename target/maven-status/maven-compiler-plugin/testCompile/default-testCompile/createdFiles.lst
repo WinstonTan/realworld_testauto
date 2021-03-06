@@ -1,9 +1,10 @@
 driverFactory/DriverFactory.class
+pageObjects/AuthorArticlePage.class
+pageObjects/SignIn.class
+util/TimeStampGenerator.class
+stepDef/StepDef.class
+testRunner/TestRunner.class
 pageObjects/NewPost.class
 pageObjects/SignUp.class
 pageObjects/Home.class
-pageObjects/SignIn.class
-testRunner/SignUpTestRunner.class
-util/UniqueKeyGenerator.class
-stepDef/StepDef.class
 util/ElementHelper.class
