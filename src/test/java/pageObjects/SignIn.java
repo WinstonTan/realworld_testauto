@@ -20,7 +20,7 @@ public class SignIn {
 
     private String signInBtnXPath = ".//*[text()='Sign in' and @type='submit']";
 
-    private String signInErrorMsg = ".//ul[@class='error-messages']/li";
+    private String signInErrorMsgXPath = ".//ul[@class='error-messages']/li";
 
     public void enterEmail(WebDriver driver, String email)
     {
@@ -60,7 +60,7 @@ public class SignIn {
     public List<String> getSignInErrorMsgs(WebDriver driver)
     {
         ElementHelper eh = new ElementHelper();
-        List<String> strOnScreenErrMsgs = eh.captureElementTextsList(driver, signInErrorMsg);
+        List<String> strOnScreenErrMsgs = eh.captureElementTextsList(driver, signInErrorMsgXPath);
 
         return strOnScreenErrMsgs;
     }

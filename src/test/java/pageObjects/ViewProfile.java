@@ -4,13 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import util.ElementHelper;
 
 import java.time.Duration;
-import java.util.List;
 
-
-public class Profile {
+public class ViewProfile {
 
     private String lastCreatedArticleTitle = ".//a[@class='preview-link']/h1";
 

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
+<testng-results ignored="0" total="23" passed="20" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-07T03:22:32 SGT" name="Test RealWorld " finished-at="2021-03-07T03:23:20 SGT" duration-ms="48923">
+  <suite started-at="2021-03-07T17:06:04 SGT" name="Test RealWorld " finished-at="2021-03-07T17:08:42 SGT" duration-ms="158273">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-03-07T03:22:32 SGT" name="Web Test" finished-at="2021-03-07T03:23:20 SGT" duration-ms="48923">
+    <test started-at="2021-03-07T17:06:04 SGT" name="Web Test" finished-at="2021-03-07T17:08:42 SGT" duration-ms="158273">
       <class name="testRunner.TestRunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:22:32 SGT" name="setUpClass" finished-at="2021-03-07T03:22:32 SGT" duration-ms="536" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:04 SGT" name="setUpClass" finished-at="2021-03-07T17:06:05 SGT" duration-ms="662" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:22:32 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T03:22:48 SGT" duration-ms="15785" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:05 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:06:20 SGT" duration-ms="15096" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,7 +30,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:22:48 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T03:22:56 SGT" duration-ms="8336" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:20 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:06:29 SGT" duration-ms="9381" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,7 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:22:56 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T03:23:04 SGT" duration-ms="7838" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:29 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:06:37 SGT" duration-ms="7894" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -71,7 +71,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 at org.testng.Assert.assertEquals(Assert.java:122)
 at org.testng.Assert.assertEquals(Assert.java:819)
 at org.testng.Assert.assertEquals(Assert.java:829)
-at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:276)
 at ✽.validation message "title can't be blank (minimum is 1 character)" appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
 ]]>
             </full-stacktrace>
@@ -79,7 +79,7 @@ at ✽.validation message "title can't be blank (minimum is 1 character)" appear
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:23:04 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T03:23:13 SGT" duration-ms="8714" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:37 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:06:45 SGT" duration-ms="7868" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -104,7 +104,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 at org.testng.Assert.assertEquals(Assert.java:122)
 at org.testng.Assert.assertEquals(Assert.java:819)
 at org.testng.Assert.assertEquals(Assert.java:829)
-at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:260)
+at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:276)
 at ✽.validation message "description can't be blank (minimum is 1 character)" appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
 ]]>
             </full-stacktrace>
@@ -112,7 +112,7 @@ at ✽.validation message "description can't be blank (minimum is 1 character)" 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:23:13 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T03:23:20 SGT" duration-ms="7578" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:45 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:06:52 SGT" duration-ms="7586" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -128,7 +128,312 @@ at ✽.validation message "description can't be blank (minimum is 1 character)" 
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T03:23:20 SGT" name="tearDownClass" finished-at="2021-03-07T03:23:20 SGT" duration-ms="101" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:06:52 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:02 SGT" duration-ms="9757" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test updating Profile successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test profile settings in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:02 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:11 SGT" duration-ms="9373" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test updating Profile successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test profile settings in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:11 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:20 SGT" duration-ms="8910" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test updating Profile successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test profile settings in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:20 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:29 SGT" duration-ms="8549" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test updating Profile successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test profile settings in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:29 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:38 SGT" duration-ms="9085" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test updating Profile successfully"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test profile settings in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:38 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:44 SGT" duration-ms="5588" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test signing in with valid email and password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign in on realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:44 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:48 SGT" duration-ms="4664" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign In page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign in on realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:48 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:53 SGT" duration-ms="5162" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign In page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign in on realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:53 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:07:58 SGT" duration-ms="4592" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign In page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign in on realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:07:58 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:03 SGT" duration-ms="4914" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign In page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign in on realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:03 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:08 SGT" duration-ms="4791" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test signing up with unique username and email, and a valid password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:08 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:13 SGT" duration-ms="4847" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:13 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:18 SGT" duration-ms="4973" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:18 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:22 SGT" duration-ms="4825" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:819)
+at org.testng.Assert.assertEquals(Assert.java:829)
+at stepDef.StepDef.sign_up_error_message_prompted(StepDef.java:122)
+at ✽.sign up error message prompted "username can't be blank (minimum is 1 character)"(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/SignUp.feature:21)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:22 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:27 SGT" duration-ms="4778" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:27 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:32 SGT" duration-ms="4830" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:32 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:37 SGT" duration-ms="4944" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:37 SGT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-07T17:08:42 SGT" duration-ms="5040" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validation test on Sign Up page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Test Sign-Up in realworld website]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@55a1c291]" started-at="2021-03-07T17:08:42 SGT" name="tearDownClass" finished-at="2021-03-07T17:08:42 SGT" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -6,13 +6,13 @@ Feature: Test Sign in on realworld website
     Given user is on homepage
     And clicks on Sign in hypertext
     Then Sign in page is loaded successfully
-    When user enters <email> and <password> in Sign In page
+    When <user> enters <email> and <password> in Sign In page
     And click on Sign in button
     Then user will be redirected back to home page
 
     Examples:
-      | email                               | password  |
-      | auto_testuser_00000@mailinator.com  | Abcd1234  |
+      | user                | email                               | password  |
+      | auto_testuser_00000 | auto_testuser_00000@mailinator.com  | Abcd1234  |
 
 
   Scenario Outline: Validation test on Sign In page

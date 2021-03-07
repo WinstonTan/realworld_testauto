@@ -21,7 +21,7 @@ public class ElementHelper {
         }
         catch (Exception e)
         {
-            System.out.println("XPath not found! : " + xpath);
+            System.out.println("Element Not Found! (XPath): " + xpath);
             System.out.println(e);
         }
     }
@@ -34,8 +34,15 @@ public class ElementHelper {
                 until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
         List <WebElement> titlesOnPage = driver.findElements(By.xpath(xpath));
 
+        //Extracting texts from elements list
         titlesOnPage.forEach(t -> elementTextsList.add(t.getText()));
 
         return elementTextsList;
+    }
+
+    public String getElementValue(WebDriver driver, String xpath)
+    {
+        return new WebDriverWait(driver, Duration.ofSeconds(5)).
+                until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath))).getAttribute("value");
     }
 }

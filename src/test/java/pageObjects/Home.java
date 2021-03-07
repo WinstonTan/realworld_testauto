@@ -127,4 +127,11 @@ public class Home {
                 until(ExpectedConditions.elementToBeClickable(By.xpath(newPostHypertextXPath)))
                 .click();
     }
+
+    public void clickSettingsHypertext(WebDriver driver)
+    {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).
+                until(ExpectedConditions.elementToBeClickable(By.xpath(settingsHypertextXPath)))
+                .click();
+    }
 }

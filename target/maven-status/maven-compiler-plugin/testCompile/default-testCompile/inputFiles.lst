@@ -1,11 +1,12 @@
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/SignIn.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/util/TimeStampGenerator.java
-/Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/Profile.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/PostAndComment.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/SignUp.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/testRunner/TestRunner.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/stepDef/StepDef.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/util/ElementHelper.java
+/Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/ViewProfile.java
+/Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/Settings.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/driverFactory/DriverFactory.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/ArticlePage.java
 /Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/java/pageObjects/Home.java

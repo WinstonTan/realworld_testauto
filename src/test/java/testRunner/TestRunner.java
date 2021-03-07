@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
                 },
         features = {"src/test/resources/features/"},
         glue = {"stepDef"},
-        tags = "@post"
+        tags = ""
         )
 
 public class TestRunner extends AbstractTestNGCucumberTests {

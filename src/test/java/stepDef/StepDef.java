@@ -8,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageObjects.*;
@@ -23,13 +24,18 @@ public class StepDef {
     SignIn signIn = new SignIn();
     PostAndComment postAndComment = new PostAndComment();
     ArticlePage articlePage = new ArticlePage();
-    Profile profile = new Profile();
+    ViewProfile profile = new ViewProfile();
+    Settings settings = new Settings();
 
     private String currentUsername;
     private String lastCreatedArticleTitle;
     private String lastAboutArticle;
     private String lastCreatedArticleMarkdown;
     private String lastCommentText;
+    private String lastUpdatedPicURL = "URL of profile picture";
+    private String lastUpdatedShortBio = "Short bio about you";
+    private String lastUpdatedEmail = "Email";
+    private String lastUpdatedPassword;
 
     TimeStampGenerator ugen = new TimeStampGenerator();
     String timestamp = ugen.getTimestamp();
@@ -63,13 +69,16 @@ public class StepDef {
 
         String username = "user" + timestamp;
         String email = username + "@mailinator.com";
+        String password = "Abcd1234";
 
-        //Caching current Username
+        //Caching current Username and email
         currentUsername = username;
+        lastUpdatedEmail = email;
+        lastUpdatedPassword = password;
 
         signUp.enterUsername(driver, username);
         signUp.enterEmail(driver, email);
-        signUp.enterPassword(driver, "Abcd1234");
+        signUp.enterPassword(driver, password);
     }
 
     @When("^user enters (.+), (.+) and (.+) in Sign Up page$")
@@ -80,8 +89,10 @@ public class StepDef {
         email = email.replace("[blank]", "");
         password = password.replace("[blank]", "");
 
-        //Caching current username
+        //Caching current user info
         currentUsername = username;
+        lastUpdatedEmail = email;
+        lastUpdatedPassword = password;
 
         signUp.enterUsername(driver, username);
         signUp.enterEmail(driver, email);
@@ -122,11 +133,16 @@ public class StepDef {
         signIn.validateSignInPage(driver);
     }
 
-    @When("^user enters (.+) and (.+) in Sign In page$")
-    public void user_enters_email_and_password_in_sign_in_page(String email, String password)
+    @When("^(.+) enters (.+) and (.+) in Sign In page$")
+    public void user_enters_email_and_password_in_sign_in_page(String user, String email, String password)
     {
         email = email.replace("[blank]", "");
         password = password.replace("[blank]", "");
+
+        //Caching user info
+        currentUsername = user;
+        lastUpdatedEmail = email;
+        lastUpdatedPassword = password;
 
         signIn.enterEmail(driver, email);
         signIn.enterPassword(driver, password);
@@ -274,6 +290,104 @@ public class StepDef {
     {
         Assert.assertEquals(profile.getLastCreatedArticleTitle(driver)
             , lastCreatedArticleTitle);
+    }
+
+    @And("^clicks on Settings hypertext$")
+    public void clicks_on_update_settings_hypertext()
+    {
+        home.clickSettingsHypertext(driver);
+    }
+
+    @Then("^Update Settings page is loaded successfully$")
+    public void update_settings_page_is_loaded_successfully()
+    {
+        settings.validateSettingsPage(driver);
+    }
+
+    @When("^user enters (.+), (.+), (.+), (.+) and (.+) in Settings page$")
+    public void user_enters_picurl_username_shortbio_email_newpassword_in_settings_page(
+            String picUrl, String username, String shortBio, String email, String newPassword)
+    {
+        picUrl = picUrl.replace("[blank]", "");
+        username = username.replace("[blank]", "");
+        shortBio = shortBio.replace("[blank]", "");
+        email = email.replace("[blank]", "");
+        newPassword = newPassword.replace("[blank]", "");
+
+        //unique value handler
+        username = username.replace("[unique username]", "bot_" + timestamp);
+        email = email.replace("[unique email]", "bot_" + timestamp + "@mailinator.com");
+
+        System.out.println("pic url : " + picUrl);
+        System.out.println("username : " + username);
+        System.out.println("shortBio : " + shortBio);
+        System.out.println("email : " + email);
+        System.out.println("newPassword : " + newPassword);
+
+        //Skip or proceed form entry and caching latest user info
+        if(!username.equals("[skip]"))
+        {
+            currentUsername = username;
+            settings.enterUsernameTFXPath(driver, username);
+        }
+
+        if(!picUrl.equals("[skip]"))
+        {
+            lastUpdatedPicURL = picUrl;
+            settings.enterProfilePicURLTFXPath(driver, picUrl);
+        }
+
+        if(!shortBio.equals("[skip]"))
+        {
+            lastUpdatedShortBio = shortBio;
+            settings.enterShortBioTAXPath(driver, shortBio);
+        }
+
+        if(!email.equals("[skip]"))
+        {
+            lastUpdatedEmail = email;
+            settings.enterEmail(driver, email);
+        }
+
+        if(!newPassword.equals("[skip]"))
+        {
+            lastUpdatedPassword = newPassword;
+            settings.enterNewPasswordPFXPath(driver, newPassword);
+        }
+    }
+
+    @And("^click on Update Settings button$")
+    public void click_on_update_settings_button()
+    {
+        settings.clickUpdateSettingsBtn(driver);
+    }
+
+    @Then("^there will be no error message on Settings page$")
+    public void new_profile_info_updated_successfully()
+    {
+        Assert.assertEquals(settings.getSettingsPageErrorMsgsCount(driver), 0);
+    }
+
+    @When("^user refresh page$")
+    public void user_refresh_page()
+    {
+        driver.navigate().refresh();
+    }
+
+    @Then("^the latest profile info will be displayed on Settings page$")
+    public void the_latest_profile_info_will_be_displayed_on_settings_page()
+    {
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("Username onpage: " + driver.findElement(By.xpath(".//*[@placeholder='Username']")).getAttribute("value"));
+//        System.exit(0);
+        Assert.assertEquals(settings.getUsernameText(driver), currentUsername);
+        Assert.assertEquals(settings.getProfilePicURLText(driver), lastUpdatedPicURL);
+        Assert.assertEquals(settings.getShortBioText(driver), lastUpdatedShortBio);
+        Assert.assertEquals(settings.getEmailText(driver), lastUpdatedEmail);
     }
 
     @After

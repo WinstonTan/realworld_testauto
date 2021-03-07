@@ -24,6 +24,8 @@ public class SignUp {
 
     private String signUpErrorMsg = ".//ul[@class='error-messages']/li";
 
+    ElementHelper eh = new ElementHelper();
+
     public void enterUsername(WebDriver driver, String username)
     {
         new WebDriverWait(driver, Duration.ofSeconds(10)).
@@ -77,14 +79,6 @@ public class SignUp {
 
     public List<String> getSignUpErrorMsgs(WebDriver driver)
     {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(
-                ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(signUpErrorMsg)));
-
-        List<WebElement> onScreenErrMsgs = driver.findElements(By.xpath(signUpErrorMsg));
-        List<String> strOnScreenErrMsgs = new ArrayList<>();
-
-        onScreenErrMsgs.forEach(e ->strOnScreenErrMsgs.add(e.getText()));
-
-        return strOnScreenErrMsgs;
+        return eh.captureElementTextsList(driver, signUpErrorMsg);
     }
 }

@@ -1,11 +1,12 @@
-pageObjects/Profile.class
 pageObjects/ArticlePage.class
 driverFactory/DriverFactory.class
 pageObjects/SignIn.class
 util/TimeStampGenerator.class
+pageObjects/Settings.class
 pageObjects/PostAndComment.class
 stepDef/StepDef.class
 testRunner/TestRunner.class
 pageObjects/SignUp.class
+pageObjects/ViewProfile.class
 pageObjects/Home.class
 util/ElementHelper.class
