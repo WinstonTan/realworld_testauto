@@ -8,7 +8,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageObjects.*;
@@ -35,14 +36,16 @@ public class StepDef {
     private String lastUpdatedPicURL = "URL of profile picture";
     private String lastUpdatedShortBio = "Short bio about you";
     private String lastUpdatedEmail = "Email";
-    private String lastUpdatedPassword;
 
     TimeStampGenerator ugen = new TimeStampGenerator();
     String timestamp = ugen.getTimestamp();
 
+    Scenario scenario;
+
     @Before
     public void setup(Scenario scenario)
     {
+        this.scenario = scenario;
         driver = new DriverFactory().initBrowser();
     }
 
@@ -79,6 +82,8 @@ public class StepDef {
         signUp.enterUsername(driver, username);
         signUp.enterEmail(driver, email);
         signUp.enterPassword(driver, password);
+
+        scenario.log("username: " + username + "\t email: " + email + "\t password: " + password );
     }
 
     @When("^user enters (.+), (.+) and (.+) in Sign Up page$")
@@ -118,8 +123,25 @@ public class StepDef {
     }
 
     @Then("^sign up error message prompted \"(.+)\"$")
-    public void sign_up_error_message_prompted(String errorMsg) throws InterruptedException {
-        Assert.assertEquals(signUp.getSignUpErrorMsgs(driver).contains(errorMsg), true);
+    public void sign_up_error_message_prompted(String errorMsg) {
+
+        String errMsgsOnScreen = "";
+
+        for(int i =0; i < signUp.getSignUpErrorMsgs(driver).size(); i++)
+        {
+            errMsgsOnScreen += "\n" + signUp.getSignUpErrorMsgs(driver).get(i);
+        }
+
+        try{
+            Assert.assertEquals(signUp.getSignUpErrorMsgs(driver).contains(errorMsg), true);
+        }
+        catch (AssertionError e)
+        {
+            scenario.log("Error Messages on screen: \n" + errMsgsOnScreen +
+                    "\n\nExpecting page contains error message: " + errorMsg);
+            Assert.fail(e.getMessage());
+        }
+
     }
 
     @And("^clicks on Sign in hypertext")
@@ -146,6 +168,8 @@ public class StepDef {
 
         signIn.enterEmail(driver, email);
         signIn.enterPassword(driver, password);
+
+        scenario.log("username: " + user + "\t email: " + email + "\t password: " + password );
     }
 
     @Then("^sign in error message prompted \"(.+)\"$")
@@ -377,22 +401,18 @@ public class StepDef {
     @Then("^the latest profile info will be displayed on Settings page$")
     public void the_latest_profile_info_will_be_displayed_on_settings_page()
     {
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("Username onpage: " + driver.findElement(By.xpath(".//*[@placeholder='Username']")).getAttribute("value"));
-//        System.exit(0);
         Assert.assertEquals(settings.getUsernameText(driver), currentUsername);
         Assert.assertEquals(settings.getProfilePicURLText(driver), lastUpdatedPicURL);
         Assert.assertEquals(settings.getShortBioText(driver), lastUpdatedShortBio);
         Assert.assertEquals(settings.getEmailText(driver), lastUpdatedEmail);
     }
 
+
     @After
     public void tearDown()
     {
+        byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "Page");
         driver.quit();
     }
 }

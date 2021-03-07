@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 23, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 158.805 sec <<< FAILURE! - in TestSuite
-runScenario(testRunner.TestRunner)  Time elapsed: 7.903 sec  <<< FAILURE!
+Tests run: 23, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 156.587 sec <<< FAILURE! - in TestSuite
+runScenario(testRunner.TestRunner)  Time elapsed: 7.958 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 
-runScenario(testRunner.TestRunner)  Time elapsed: 7.868 sec  <<< FAILURE!
+runScenario(testRunner.TestRunner)  Time elapsed: 7.721 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 
-runScenario(testRunner.TestRunner)  Time elapsed: 4.825 sec  <<< FAILURE!
+runScenario(testRunner.TestRunner)  Time elapsed: 5.383 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 

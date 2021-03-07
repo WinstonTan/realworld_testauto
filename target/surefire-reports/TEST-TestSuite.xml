@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="158.805" tests="23" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="156.587" tests="23" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="cucumber.options" value="--tags &apos;@signin&apos;"/>
+    <property name="cucumber.options" value="--tags &apos;@post&apos;"/>
     <property name="java.vm.version" value="15.0.1+9-18"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/lib"/>
     <property name="maven.multiModuleProjectDirectory" value="/Users/tanchw/Documents/assignment/realworldweb-testauto"/>
@@ -41,7 +41,7 @@
     <property name="java.class.path" value="/Library/apache-maven-3.6.3/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -DsuiteXmlFile=TestNG.xml -Dcucumber.options=--tags &apos;@signin&apos;"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -DsuiteXmlFile=TestNG.xml -Dcucumber.options=--tags &apos;@post&apos;"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -55,9 +55,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="15.097"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.381"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.903">
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="15.028"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.788"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.958">
     <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
 </failure>
     <system-out><![CDATA[
@@ -66,6 +66,9 @@ Scenario Outline: Test Validation in new post page form                         
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on homepage&amp#27;[0m                                                                        &amp#27;[90m# stepDef.StepDef.user_is_on_homepage()&amp#27;[0m
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on Sign up hypertext&amp#27;[0m                                                                  &amp#27;[90m# stepDef.StepDef.clicks_on_sign_up_hypertext()&amp#27;[0m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mSign Up page is loaded successfully&amp#27;[0m                                                         &amp#27;[90m# stepDef.StepDef.sign_up_page_is_loaded_successfully()&amp#27;[0m
+
+    username: user210307_234232490	 email: user210307_234232490@mailinator.com	 password: Abcd1234
+
   &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser inserts unique username and email, and a valid password&amp#27;[0m                                &amp#27;[90m# stepDef.StepDef.user_inserts_unique_username_and_email_and_a_valid_password()&amp#27;[0m
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Sign in button&amp#27;[0m                                                                      &amp#27;[90m# stepDef.StepDef.click_on_sign_in_button()&amp#27;[0m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32msuccessfully signed up username hypertext will be displayed&amp#27;[0m                                 &amp#27;[90m# stepDef.StepDef.successfully_signed_up_username_hypertext_will_be_displayed()&amp#27;[0m
@@ -82,21 +85,25 @@ Scenario Outline: Test Validation in new post page form                         
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:819)
 	at org.testng.Assert.assertEquals(Assert.java:829)
-	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:276)
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:304)
 	at ���.validation message "title can't be blank (minimum is 1 character)" appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
 &amp#27;[0m
+
+    Embedding Page [image/png 43331 bytes]
+
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 19352
+    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 28834
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1615131752.518][WARNING]: FromSockAddr failed on netmask
 ChromeDriver was started successfully.
-Mar 07, 2021 5:06:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Mar 07, 2021 11:42:33 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Mar 07, 2021 5:06:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Mar 07, 2021 11:42:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found exact CDP implementation for version 89
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.868">
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.721">
     <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
 </failure>
     <system-out><![CDATA[
@@ -105,6 +112,9 @@ Scenario Outline: Test Validation in new post page form                         
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on homepage&amp#27;[0m                                                                              &amp#27;[90m# stepDef.StepDef.user_is_on_homepage()&amp#27;[0m
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicks on Sign up hypertext&amp#27;[0m                                                                        &amp#27;[90m# stepDef.StepDef.clicks_on_sign_up_hypertext()&amp#27;[0m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mSign Up page is loaded successfully&amp#27;[0m                                                               &amp#27;[90m# stepDef.StepDef.sign_up_page_is_loaded_successfully()&amp#27;[0m
+
+    username: user210307_234240442	 email: user210307_234240442@mailinator.com	 password: Abcd1234
+
   &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser inserts unique username and email, and a valid password&amp#27;[0m                                      &amp#27;[90m# stepDef.StepDef.user_inserts_unique_username_and_email_and_a_valid_password()&amp#27;[0m
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Sign in button&amp#27;[0m                                                                            &amp#27;[90m# stepDef.StepDef.click_on_sign_in_button()&amp#27;[0m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32msuccessfully signed up username hypertext will be displayed&amp#27;[0m                                       &amp#27;[90m# stepDef.StepDef.successfully_signed_up_username_hypertext_will_be_displayed()&amp#27;[0m
@@ -121,35 +131,39 @@ Scenario Outline: Test Validation in new post page form                         
 	at org.testng.Assert.assertEquals(Assert.java:122)
 	at org.testng.Assert.assertEquals(Assert.java:819)
 	at org.testng.Assert.assertEquals(Assert.java:829)
-	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:276)
+	at stepDef.StepDef.validation_message_appears_on_new_post_page(StepDef.java:304)
 	at ���.validation message "description can't be blank (minimum is 1 character)" appears on new post page(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/Post.feature:50)
 &amp#27;[0m
+
+    Embedding Page [image/png 46600 bytes]
+
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 35021
+    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 3213
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1615131760.468][WARNING]: FromSockAddr failed on netmask
 ChromeDriver was started successfully.
-Mar 07, 2021 5:06:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Mar 07, 2021 11:42:41 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Mar 07, 2021 5:06:38 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Mar 07, 2021 11:42:41 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found exact CDP implementation for version 89
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.586"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.756"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.373"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.91"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.548"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.086"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.588"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.665"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.162"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.593"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.914"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.79"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.847"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.973"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.825">
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="7.518"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.35"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.093"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.7"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="9.32"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="8.487"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.55"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.139"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.438"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.761"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.952"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="5"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.647"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.205"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.383">
     <failure message="expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
 </failure>
     <system-out><![CDATA[
@@ -160,30 +174,37 @@ Scenario Outline: Validation test on Sign Up page                               
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mSign Up page is loaded successfully&amp#27;[0m                                                  &amp#27;[90m# stepDef.StepDef.sign_up_page_is_loaded_successfully()&amp#27;[0m
  username: [blank]  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters &amp#27;[0m&amp#27;[32m&amp#27;[1m[blank]&amp#27;[0m&amp#27;[32m, &amp#27;[0m&amp#27;[32m&amp#27;[1mauto_testuser_99900@mailinator.com&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1mAbcd1234&amp#27;[0m&amp#27;[32m in Sign Up page&amp#27;[0m &amp#27;[90m# stepDef.StepDef.user_enters_username_email_and_password_in_sign_up_page(java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclick on Sign in button&amp#27;[0m                                                               &amp#27;[90m# stepDef.StepDef.click_on_sign_in_button()&amp#27;[0m
+
+    Error Messages on screen: 
+    
+    email has already been taken
+    username can't be blankis too short (minimum is 1 character)is too long (maximum is 20 characters)
+    
+    Expecting page contains error message: username can't be blank (minimum is 1 character)
+
   &amp#27;[31mThen &amp#27;[0m&amp#27;[31msign up error message prompted "&amp#27;[0m&amp#27;[31m&amp#27;[1musername can't be blank (minimum is 1 character)&amp#27;[0m&amp#27;[31m"&amp#27;[0m    &amp#27;[90m# stepDef.StepDef.sign_up_error_message_prompted(java.lang.String)&amp#27;[0m
       &amp#27;[31mjava.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:819)
-	at org.testng.Assert.assertEquals(Assert.java:829)
-	at stepDef.StepDef.sign_up_error_message_prompted(StepDef.java:122)
+	at stepDef.StepDef.sign_up_error_message_prompted(StepDef.java:146)
 	at ���.sign up error message prompted "username can't be blank (minimum is 1 character)"(file:///Users/tanchw/Documents/assignment/realworldweb-testauto/src/test/resources/features/SignUp.feature:21)
 &amp#27;[0m
+
+    Embedding Page [image/png 48031 bytes]
+
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 26678
+    <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 21038
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1615131858.351][WARNING]: FromSockAddr failed on netmask
 ChromeDriver was started successfully.
-Mar 07, 2021 5:08:19 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Mar 07, 2021 11:44:19 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Mar 07, 2021 5:08:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Mar 07, 2021 11:44:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found exact CDP implementation for version 89
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.778"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.83"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.944"/>
-  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.04"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.178"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="4.352"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.103"/>
+  <testcase name="runScenario" classname="testRunner.TestRunner" time="5.913"/>
 </testsuite>
