@@ -46,7 +46,7 @@ mvn clean test -DsuiteXmlFile=TestNG.xml
 <br/>
 Test Reporting: 
 Aside from monitoring the test progress and results in console log, the html test report can be obtained under: <br/>
-_target/cucumber-reports/cucumber.html_
+target/cucumber-reports/cucumber.html
 
 
 
