@@ -39,4 +39,14 @@ i.e, /Users/winston/assignment/
 2. Open command line tool (iTerm) and navigate to the parent folder of project. <br/>
 i.e. /Users/winston/assignment/realworldweb-testauto/
 
-3. 
+3. Execute this command to run test<br/>
+mvn clean test -DsuiteXmlFile=TestNG.xml
+
+<br/>
+<br/>
+Test Reporting: 
+Aside from monitoring the test progress and results in console log, the html test report can be obtained under: <br/>
+__target/cucumber-reports/cucumber.html__
+
+
+
