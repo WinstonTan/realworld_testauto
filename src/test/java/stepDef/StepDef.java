@@ -36,6 +36,7 @@ public class StepDef {
     private String lastUpdatedPicURL = "URL of profile picture";
     private String lastUpdatedShortBio = "Short bio about you";
     private String lastUpdatedEmail = "Email";
+    private String lastUpdatedPassword = "New Password";
 
     TimeStampGenerator ugen = new TimeStampGenerator();
     String timestamp = ugen.getTimestamp();
