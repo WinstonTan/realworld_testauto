@@ -66,7 +66,7 @@ public class PostAndComment {
         }
     }
 
-    public List<String> getNewPostErrorMsgs(WebDriver driver)
+    public List<String> getNewPostErrorMsgsList(WebDriver driver)
     {
         ElementHelper eh = new ElementHelper();
         List<String> strOnScreenErrMsgs = eh.captureElementTextsList(driver, newPostErrorMsg);
@@ -89,5 +89,13 @@ public class PostAndComment {
 
         //Validate presence of Publish Article button
         eh.validatePresenceOfElement(driver, publishArticleBtnXPath);
+    }
+
+    public String getNewPostErrorMsgsStr(WebDriver driver)
+    {
+        String errMsgOnScreen = String.join("\n",
+                getNewPostErrorMsgsList(driver));
+
+        return  errMsgOnScreen;
     }
 }

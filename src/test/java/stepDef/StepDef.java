@@ -136,13 +136,16 @@ public class StepDef {
         try{
             Assert.assertEquals(signUp.getSignUpErrorMsgs(driver).contains(errorMsg), true);
         }
-        catch (AssertionError e)
+        catch (AssertionError ae)
         {
-            scenario.log("Error Messages on screen: \n" + errMsgsOnScreen +
-                    "\n\nExpecting page contains error message: " + errorMsg);
-            Assert.fail(e.getMessage());
-        }
+            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "Page" + timestamp);
 
+            String assertionError = "Expecting \"" + errorMsg + "\" but found \"" +
+                    postAndComment.getNewPostErrorMsgsStr(driver);
+            scenario.log(assertionError);
+            Assert.fail(assertionError);
+        }
     }
 
     @And("^clicks on Sign in hypertext")
@@ -174,8 +177,20 @@ public class StepDef {
     }
 
     @Then("^sign in error message prompted \"(.+)\"$")
-    public void sign_in_error_message_prompted(String errorMsg) throws InterruptedException {
-        Assert.assertEquals(signIn.getSignInErrorMsgs(driver).contains(errorMsg), true);
+    public void sign_in_error_message_prompted(String errorMsg){
+        try {
+            Assert.assertEquals(signIn.getSignInErrorMsgs(driver).contains(errorMsg), true);
+        }
+        catch (AssertionError ae)
+        {
+            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "Page" + timestamp);
+
+            String assertionError = "Expecting \"" + errorMsg + "\" but found \"" +
+                    postAndComment.getNewPostErrorMsgsStr(driver);
+            scenario.log(assertionError);
+            Assert.fail(assertionError);
+        }
     }
 
     @And("^clicks on New Post hypertext$")
@@ -298,10 +313,22 @@ public class StepDef {
     @Then("^validation message \"(.+)\" appears on new post page$")
     public void validation_message_appears_on_new_post_page(String errorMsg)
     {
-        Assert.assertEquals(
-                postAndComment.getNewPostErrorMsgs(driver)
-                        .contains(errorMsg),
-                true);
+        try {
+            Assert.assertEquals(
+                    postAndComment.getNewPostErrorMsgsList(driver)
+                            .contains(errorMsg),
+                    true);
+        }
+        catch (AssertionError ae)
+        {
+            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "Page" + timestamp);
+
+            String assertionError = "Expecting \"" + errorMsg + "\" but found \"" +
+                    postAndComment.getNewPostErrorMsgsStr(driver);
+            scenario.log(assertionError);
+            Assert.fail(assertionError);
+        }
     }
 
     @And("^user click on own username hypertext on top right$")
@@ -408,12 +435,14 @@ public class StepDef {
         Assert.assertEquals(settings.getEmailText(driver), lastUpdatedEmail);
     }
 
-
     @After
     public void tearDown()
     {
         byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot, "image/png", "Page");
+        if(scenario.isFailed())
+        {
+            scenario.attach(screenshot, "image/png", "Page" + timestamp);
+        }
         driver.quit();
     }
 }
