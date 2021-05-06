@@ -15,6 +15,7 @@ public class DriverFactory {
     {
         String browserType = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browserType");
         WebDriver driver;
+        ChromeOptions options = new ChromeOptions();
 
         switch (browserType.toUpperCase()) {
             case "MACOS_CHROME": default:
@@ -23,7 +24,17 @@ public class DriverFactory {
                 break;
             case "MACOS_CHROME_HEADLESS":
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver");
-                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--headless");
+                driver = new ChromeDriver(options);
+                break;
+            case "WIN10_CHROME":
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver.exe");
+                driver = new ChromeDriver(options);
+                break;
+
+            case "WIN10_CHROME_HEADLESS":
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver.exe");
+                options.addArguments("--headless");
                 driver = new ChromeDriver(options);
                 break;
         }
