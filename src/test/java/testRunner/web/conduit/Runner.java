@@ -1,4 +1,4 @@
-package testRunner;
+package testRunner.web.conduit;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -12,10 +12,10 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-reports/cucumber.json"
                 },
         features = {"src/test/resources/features/"},
-        glue = {"stepDef"},
+        glue = {"stepDef/TestRunner/web/conduit/"},
         tags = ""
         )
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class Runner extends AbstractTestNGCucumberTests {
 
 }

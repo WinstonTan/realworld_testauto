@@ -1,4 +1,4 @@
-package stepDef;
+package stepDef.conduit;
 
 import driverFactory.DriverFactory;
 import io.cucumber.java.After;
@@ -12,12 +12,14 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import pageObjects.*;
 import util.TimeStampGenerator;
 
 import java.util.List;
 
-public class StepDef {
+public class Steps {
 
     WebDriver driver;
     Home home = new Home();
@@ -43,7 +45,7 @@ public class StepDef {
 
     Scenario scenario;
 
-    @Before
+    @BeforeClass
     public void setup(Scenario scenario)
     {
         this.scenario = scenario;
@@ -435,7 +437,7 @@ public class StepDef {
         Assert.assertEquals(settings.getEmailText(driver), lastUpdatedEmail);
     }
 
-    @After
+    @AfterClass
     public void tearDown()
     {
         byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);

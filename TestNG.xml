@@ -5,7 +5,7 @@
 <!--        <parameter name="browserType" value="macOS_chrome"></parameter>-->
         <parameter name="browserType" value="win10_chrome"></parameter>
          <classes>
-            <class name="testRunner.TestRunner"/>
+            <class name="testRunner.web.google.search.Runner"/>
         </classes>
     </test>
 </suite>
