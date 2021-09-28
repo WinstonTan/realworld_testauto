@@ -1,27 +1,22 @@
 package stepDef.conduit;
 
-import driverFactory.DriverFactory;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import pageObjects.*;
 import util.TimeStampGenerator;
+import static util.Consts.WEBDRIVER;
+import static util.Consts.SCENARIO;
+
 
 import java.util.List;
 
 public class Steps {
 
-    WebDriver driver;
     Home home = new Home();
     SignUp signUp = new SignUp();
     SignIn signIn = new SignIn();
@@ -43,37 +38,27 @@ public class Steps {
     TimeStampGenerator ugen = new TimeStampGenerator();
     String timestamp = ugen.getTimestamp();
 
-    Scenario scenario;
-
-    @BeforeClass
-    public void setup(Scenario scenario)
-    {
-        this.scenario = scenario;
-        driver = new DriverFactory().initBrowser();
-    }
-
     @Given("^user is on homepage$")
     public void user_is_on_homepage(){
-        driver.get("https://react-redux.realworld.io/");
-        home.validateHomePageAnonymous(driver);
+        WEBDRIVER.get("https://react-redux.realworld.io/");
+        home.validateHomePageAnonymous(WEBDRIVER);
     }
 
     @And("^clicks on Sign up hypertext")
     public void clicks_on_sign_up_hypertext() {
-        home.clickSignUpHypertext(driver);
+        home.clickSignUpHypertext(WEBDRIVER);
     }
 
     @Then("^Sign Up page is loaded successfully$")
     public void sign_up_page_is_loaded_successfully()
     {
-        signUp.validateSignUpPage(driver);
+        signUp.validateSignUpPage(WEBDRIVER);
     }
 
     @When("^user inserts unique username and email, and a valid password$")
     public void user_inserts_unique_username_and_email_and_a_valid_password()
     {
-
-        String username = "user" + timestamp;
+        String username = "user_" + timestamp;
         String email = username + "@mailinator.com";
         String password = "Abcd1234";
 
@@ -82,11 +67,11 @@ public class Steps {
         lastUpdatedEmail = email;
         lastUpdatedPassword = password;
 
-        signUp.enterUsername(driver, username);
-        signUp.enterEmail(driver, email);
-        signUp.enterPassword(driver, password);
+        signUp.enterUsername(WEBDRIVER, username);
+        signUp.enterEmail(WEBDRIVER, email);
+        signUp.enterPassword(WEBDRIVER, password);
 
-        scenario.log("username: " + username + "\t email: " + email + "\t password: " + password );
+        SCENARIO.log("username: " + username + "\t email: " + email + "\t password: " + password );
     }
 
     @When("^user enters (.+), (.+) and (.+) in Sign Up page$")
@@ -102,27 +87,27 @@ public class Steps {
         lastUpdatedEmail = email;
         lastUpdatedPassword = password;
 
-        signUp.enterUsername(driver, username);
-        signUp.enterEmail(driver, email);
-        signUp.enterPassword(driver, password);
+        signUp.enterUsername(WEBDRIVER, username);
+        signUp.enterEmail(WEBDRIVER, email);
+        signUp.enterPassword(WEBDRIVER, password);
     }
 
     @And("^click on Sign in button$")
     public void click_on_sign_in_button()
     {
-        signUp.clickSignInBtn(driver);
+        signUp.clickSignInBtn(WEBDRIVER);
     }
 
     @Then("^successfully signed up username hypertext will be displayed$")
     public void successfully_signed_up_username_hypertext_will_be_displayed()
     {
-        home.validateLoginSuccessful(driver, currentUsername);
+        home.validateLoginSuccessful(WEBDRIVER, currentUsername);
     }
 
     @Then("^user will be redirected back to home page$")
     public void user_will_be_redirected_back_to_home_page()
     {
-        home.validateHomePageLoginUser(driver);
+        home.validateHomePageLoginUser(WEBDRIVER);
     }
 
     @Then("^sign up error message prompted \"(.+)\"$")
@@ -130,35 +115,35 @@ public class Steps {
 
         String errMsgsOnScreen = "";
 
-        for(int i =0; i < signUp.getSignUpErrorMsgs(driver).size(); i++)
+        for(int i =0; i < signUp.getSignUpErrorMsgs(WEBDRIVER).size(); i++)
         {
-            errMsgsOnScreen += "\n" + signUp.getSignUpErrorMsgs(driver).get(i);
+            errMsgsOnScreen += "\n" + signUp.getSignUpErrorMsgs(WEBDRIVER).get(i);
         }
 
         try{
-            Assert.assertEquals(signUp.getSignUpErrorMsgs(driver).contains(errorMsg), true);
+            Assert.assertEquals(signUp.getSignUpErrorMsgs(WEBDRIVER).contains(errorMsg), true);
         }
         catch (AssertionError ae)
         {
-            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "Page" + timestamp);
+            byte[] screenshot = ((TakesScreenshot)WEBDRIVER).getScreenshotAs(OutputType.BYTES);
+            SCENARIO.attach(screenshot, "image/png", "Page" + timestamp);
 
             String assertionError = "Expecting \"" + errorMsg + "\" but found \"" +
-                    postAndComment.getNewPostErrorMsgsStr(driver);
-            scenario.log(assertionError);
+                    postAndComment.getNewPostErrorMsgsStr(WEBDRIVER);
+            SCENARIO.log(assertionError);
             Assert.fail(assertionError);
         }
     }
 
     @And("^clicks on Sign in hypertext")
     public void clicks_on_sign_in_hypertext() {
-        home.clickSignInHypertext(driver);
+        home.clickSignInHypertext(WEBDRIVER);
     }
 
     @Then("^Sign in page is loaded successfully$")
     public void sign_in_page_is_loaded_successfully()
     {
-        signIn.validateSignInPage(driver);
+        signIn.validateSignInPage(WEBDRIVER);
     }
 
     @When("^(.+) enters (.+) and (.+) in Sign In page$")
@@ -172,25 +157,25 @@ public class Steps {
         lastUpdatedEmail = email;
         lastUpdatedPassword = password;
 
-        signIn.enterEmail(driver, email);
-        signIn.enterPassword(driver, password);
+        signIn.enterEmail(WEBDRIVER, email);
+        signIn.enterPassword(WEBDRIVER, password);
 
-        scenario.log("username: " + user + "\t email: " + email + "\t password: " + password );
+        SCENARIO.log("username: " + user + "\t email: " + email + "\t password: " + password );
     }
 
     @Then("^sign in error message prompted \"(.+)\"$")
     public void sign_in_error_message_prompted(String errorMsg){
         try {
-            Assert.assertEquals(signIn.getSignInErrorMsgs(driver).contains(errorMsg), true);
+            Assert.assertEquals(signIn.getSignInErrorMsgs(WEBDRIVER).contains(errorMsg), true);
         }
         catch (AssertionError ae)
         {
-            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "Page" + timestamp);
+            byte[] screenshot = ((TakesScreenshot)WEBDRIVER).getScreenshotAs(OutputType.BYTES);
+            SCENARIO.attach(screenshot, "image/png", "Page" + timestamp);
 
             String assertionError = "Expecting \"" + errorMsg + "\" but found \"" +
-                    postAndComment.getNewPostErrorMsgsStr(driver);
-            scenario.log(assertionError);
+                    postAndComment.getNewPostErrorMsgsStr(WEBDRIVER);
+            SCENARIO.log(assertionError);
             Assert.fail(assertionError);
         }
     }
@@ -198,13 +183,13 @@ public class Steps {
     @And("^clicks on New Post hypertext$")
     public void clicks_on_new_post_hypertext()
     {
-        home.clickNewPostHypertext(driver);
+        home.clickNewPostHypertext(WEBDRIVER);
     }
 
     @Then("^New Post page is loaded successfully$")
     public void new_post_page_is_loaded_successfully()
     {
-        postAndComment.validateNewPostPage(driver);
+        postAndComment.validateNewPostPage(WEBDRIVER);
     }
 
     @When("^user enters valid articleTitle, aboutArticle, articleMarkdown and tags in New Post page$")
@@ -215,70 +200,70 @@ public class Steps {
         lastCreatedArticleMarkdown = "article_markdown " + timestamp;
         String tags = "test_" + timestamp;
 
-        postAndComment.enterArticleTitle(driver, lastCreatedArticleTitle);
-        postAndComment.enterAboutThisArticle(driver, lastAboutArticle);
-        postAndComment.enterWriteYourArticleInMarkDown(driver, lastCreatedArticleMarkdown);
-        postAndComment.enterTags(driver, tags);
+        postAndComment.enterArticleTitle(WEBDRIVER, lastCreatedArticleTitle);
+        postAndComment.enterAboutThisArticle(WEBDRIVER, lastAboutArticle);
+        postAndComment.enterWriteYourArticleInMarkDown(WEBDRIVER, lastCreatedArticleMarkdown);
+        postAndComment.enterTags(WEBDRIVER, tags);
     }
 
     @And("^click on Publish Article button$")
     public void click_on_publish_article_button()
     {
-        postAndComment.clickPublishArticleBtn(driver);
+        postAndComment.clickPublishArticleBtn(WEBDRIVER);
     }
 
     @Then("^target Author Article Page created and loaded successful$")
     public void target_article_page_created_and_loaded_successful()
     {
-        articlePage.validateArticlePageUI(driver, true);
+        articlePage.validateArticlePageUI(WEBDRIVER, true);
 
-        Assert.assertEquals(articlePage.getArticleTitle(driver), lastCreatedArticleTitle);
-        Assert.assertEquals(articlePage.getAuthorName(driver), currentUsername);
-        Assert.assertEquals(articlePage.getArticleMarkdownParagraph(driver), lastCreatedArticleMarkdown);
+        Assert.assertEquals(articlePage.getArticleTitle(WEBDRIVER), lastCreatedArticleTitle);
+        Assert.assertEquals(articlePage.getAuthorName(WEBDRIVER), currentUsername);
+        Assert.assertEquals(articlePage.getArticleMarkdownParagraph(WEBDRIVER), lastCreatedArticleMarkdown);
     }
 
     @When("^user enters comment$")
     public void user_enters_comment() {
         lastCommentText = "Test comment 1 2 3 " + timestamp;
-        articlePage.enterComment(driver, lastCommentText);
+        articlePage.enterComment(WEBDRIVER, lastCommentText);
 
     }
 
     @And("^click on Post Comment button$")
     public void click_on_post_comment_button() throws InterruptedException {
-        articlePage.clickPostCommentBtn(driver);
+        articlePage.clickPostCommentBtn(WEBDRIVER);
         Thread.sleep(2000);
     }
 
     @Then("^new comment card entry is created and displaying on Article page$")
     public void new_comment_card_entry_is_created_and_displaying_on_article_page()
     {
-        Assert.assertEquals(articlePage.getLastCommentCardText(driver), lastCommentText);
-        Assert.assertEquals(articlePage.getLastCommentAuthorHypertext(driver), currentUsername);
+        Assert.assertEquals(articlePage.getLastCommentCardText(WEBDRIVER), lastCommentText);
+        Assert.assertEquals(articlePage.getLastCommentAuthorHypertext(WEBDRIVER), currentUsername);
     }
 
     @When("^user navigates to Home page again$")
     public void user_navigates_to_home_page_again()
     {
-        home.clickHome(driver);
+        home.clickHome(WEBDRIVER);
     }
 
     @And("^click on Global Feed tab header$")
     public void click_on_global_feed_tab_header()
     {
-        home.clickGlobalFeedTabHeader(driver);
+        home.clickGlobalFeedTabHeader(WEBDRIVER);
     }
 
     @Then("^the top 10 latest feeds will be displayed on Global Feed listing$")
     public void the_top_10_latest_feeds_will_be_isplayed_on_global_feed_listing()
     {
-        List<String> globalFeedTitlesList = home.getPage1GlobalFeedTitles(driver);
+        List<String> globalFeedTitlesList = home.getPage1GlobalFeedTitles(WEBDRIVER);
         Assert.assertEquals(globalFeedTitlesList.contains(lastCreatedArticleTitle),
                 true);
 
         globalFeedTitlesList.forEach(s -> System.out.println("Global Feed: " + s));
 
-        Assert.assertEquals(home.getPage1GlobalFeedAuthors(driver)
+        Assert.assertEquals(home.getPage1GlobalFeedAuthors(WEBDRIVER)
                 .contains(currentUsername),
                 true);
 
@@ -288,13 +273,13 @@ public class Steps {
     @And("^click on the top Global Feed article title$")
     public void click_on_the_top_global_feed_article_title()
     {
-        home.clickLastGlobalFeedTitle(driver);
+        home.clickLastGlobalFeedTitle(WEBDRIVER);
     }
 
     @Then("^the target article page will be opened$")
     public void the_target_article_page_will_be_opened()
     {
-        articlePage.validateArticlePageUI(driver, false);
+        articlePage.validateArticlePageUI(WEBDRIVER, false);
     }
 
     @When("^user enters (.+), (.+), (.+) and (.+) in Post form$")
@@ -306,10 +291,10 @@ public class Steps {
         articleMarkdown = articleMarkdown.replace("[blank]", "");
         tags = tags.replace("[blank]", "");
 
-        postAndComment.enterArticleTitle(driver, articleTitle);
-        postAndComment.enterAboutThisArticle(driver, aboutArticle);
-        postAndComment.enterWriteYourArticleInMarkDown(driver, articleMarkdown);
-        postAndComment.enterTags(driver, tags);
+        postAndComment.enterArticleTitle(WEBDRIVER, articleTitle);
+        postAndComment.enterAboutThisArticle(WEBDRIVER, aboutArticle);
+        postAndComment.enterWriteYourArticleInMarkDown(WEBDRIVER, articleMarkdown);
+        postAndComment.enterTags(WEBDRIVER, tags);
     }
 
     @Then("^validation message \"(.+)\" appears on new post page$")
@@ -317,18 +302,18 @@ public class Steps {
     {
         try {
             Assert.assertEquals(
-                    postAndComment.getNewPostErrorMsgsList(driver)
+                    postAndComment.getNewPostErrorMsgsList(WEBDRIVER)
                             .contains(errorMsg),
                     true);
         }
         catch (AssertionError ae)
         {
-            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "Page" + timestamp);
+            byte[] screenshot = ((TakesScreenshot)WEBDRIVER).getScreenshotAs(OutputType.BYTES);
+            SCENARIO.attach(screenshot, "image/png", "Page" + timestamp);
 
             String assertionError = "Expecting \"" + errorMsg + "\" but found \"" +
-                    postAndComment.getNewPostErrorMsgsStr(driver);
-            scenario.log(assertionError);
+                    postAndComment.getNewPostErrorMsgsStr(WEBDRIVER);
+            SCENARIO.log(assertionError);
             Assert.fail(assertionError);
         }
     }
@@ -336,26 +321,26 @@ public class Steps {
     @And("^user click on own username hypertext on top right$")
     public void user_click_on_own_username_hypertext_on_top_right()
     {
-        profile.clickOwnProfileHypertextByUsername(driver, currentUsername);
+        profile.clickOwnProfileHypertextByUsername(WEBDRIVER, currentUsername);
     }
 
     @Then("^the last Article title will displayed in My Articles listing on profile page$")
     public void the_last_article_title_will_displayed_in_my_articles_listing_on_profile_page()
     {
-        Assert.assertEquals(profile.getLastCreatedArticleTitle(driver)
+        Assert.assertEquals(profile.getLastCreatedArticleTitle(WEBDRIVER)
             , lastCreatedArticleTitle);
     }
 
     @And("^clicks on Settings hypertext$")
     public void clicks_on_update_settings_hypertext()
     {
-        home.clickSettingsHypertext(driver);
+        home.clickSettingsHypertext(WEBDRIVER);
     }
 
     @Then("^Update Settings page is loaded successfully$")
     public void update_settings_page_is_loaded_successfully()
     {
-        settings.validateSettingsPage(driver);
+        settings.validateSettingsPage(WEBDRIVER);
     }
 
     @When("^user enters (.+), (.+), (.+), (.+) and (.+) in Settings page$")
@@ -369,8 +354,8 @@ public class Steps {
         newPassword = newPassword.replace("[blank]", "");
 
         //unique value handler
-        username = username.replace("[unique username]", "bot_" + timestamp);
-        email = email.replace("[unique email]", "bot_" + timestamp + "@mailinator.com");
+        username = username.replace("[unique username]", "user_" + timestamp);
+        email = email.replace("[unique email]", "user_" + timestamp + "@mailinator.com");
 
         System.out.println("pic url : " + picUrl);
         System.out.println("username : " + username);
@@ -382,69 +367,59 @@ public class Steps {
         if(!username.equals("[skip]"))
         {
             currentUsername = username;
-            settings.enterUsernameTFXPath(driver, username);
+            settings.enterUsernameTFXPath(WEBDRIVER, username);
         }
 
         if(!picUrl.equals("[skip]"))
         {
             lastUpdatedPicURL = picUrl;
-            settings.enterProfilePicURLTFXPath(driver, picUrl);
+            settings.enterProfilePicURLTFXPath(WEBDRIVER, picUrl);
         }
 
         if(!shortBio.equals("[skip]"))
         {
             lastUpdatedShortBio = shortBio;
-            settings.enterShortBioTAXPath(driver, shortBio);
+            settings.enterShortBioTAXPath(WEBDRIVER, shortBio);
         }
 
         if(!email.equals("[skip]"))
         {
             lastUpdatedEmail = email;
-            settings.enterEmail(driver, email);
+            settings.enterEmail(WEBDRIVER, email);
         }
 
         if(!newPassword.equals("[skip]"))
         {
             lastUpdatedPassword = newPassword;
-            settings.enterNewPasswordPFXPath(driver, newPassword);
+            settings.enterNewPasswordPFXPath(WEBDRIVER, newPassword);
         }
     }
 
     @And("^click on Update Settings button$")
     public void click_on_update_settings_button()
     {
-        settings.clickUpdateSettingsBtn(driver);
+        settings.clickUpdateSettingsBtn(WEBDRIVER);
     }
 
     @Then("^there will be no error message on Settings page$")
     public void new_profile_info_updated_successfully()
     {
-        Assert.assertEquals(settings.getSettingsPageErrorMsgsCount(driver), 0);
+        Assert.assertEquals(settings.getSettingsPageErrorMsgsCount(WEBDRIVER), 0);
     }
 
     @When("^user refresh page$")
     public void user_refresh_page()
     {
-        driver.navigate().refresh();
+        WEBDRIVER.navigate().refresh();
     }
 
     @Then("^the latest profile info will be displayed on Settings page$")
     public void the_latest_profile_info_will_be_displayed_on_settings_page()
     {
-        Assert.assertEquals(settings.getUsernameText(driver), currentUsername);
-        Assert.assertEquals(settings.getProfilePicURLText(driver), lastUpdatedPicURL);
-        Assert.assertEquals(settings.getShortBioText(driver), lastUpdatedShortBio);
-        Assert.assertEquals(settings.getEmailText(driver), lastUpdatedEmail);
+        Assert.assertEquals(settings.getUsernameText(WEBDRIVER), currentUsername);
+        Assert.assertEquals(settings.getProfilePicURLText(WEBDRIVER), lastUpdatedPicURL);
+        Assert.assertEquals(settings.getShortBioText(WEBDRIVER), lastUpdatedShortBio);
+        Assert.assertEquals(settings.getEmailText(WEBDRIVER), lastUpdatedEmail);
     }
 
-    @AfterClass
-    public void tearDown()
-    {
-        byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-        if(scenario.isFailed())
-        {
-            scenario.attach(screenshot, "image/png", "Page" + timestamp);
-        }
-        driver.quit();
-    }
 }
